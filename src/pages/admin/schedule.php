@@ -1,3 +1,7 @@
+<?php
+require '../../libs/function.php';
+CheckAuthenticationAndAuthorization();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,25 +9,20 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin00 </title>
+  <title>Schedule</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="../../../assets/vendors/css/vendor.bundle.addons.css">
   <!-- endinject -->
   <!-- plugin css for this page -->
-  <link rel="stylesheet" href="vendors/iconfonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="../../../assets/vendors/iconfonts/font-awesome/css/font-awesome.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../../../assets/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="images/favicon.png" />
-
+  <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
 </head>
-
-<?php
-include '../public/function.php';
-?>
 
 <body>
 
@@ -72,7 +71,8 @@ include '../public/function.php';
   		</tr>
   	</table>
   </form>
-<form style="overflow: auto;">
+
+  <form style="overflow: auto;">
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -121,9 +121,7 @@ include '../public/function.php';
 		$strStartDate = date ("Y-m-d", strtotime("+1 day", strtotime($strStartDate)));
 	}
  echo "</tr>";
-
-
-  ?>
+?>
   <?php
   $conn = PDOConnector();
   $sql = 'SELECT * FROM users where user_level != 0';
@@ -158,8 +156,6 @@ include '../public/function.php';
 
 </form>
 <?php }} ?>
-
-
 
 <!-- plugins:js -->
 <script src="vendors/js/vendor.bundle.base.js"></script>

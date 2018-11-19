@@ -93,7 +93,7 @@
         </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="pages/tables/basic-table.html">
+        <a class="nav-link" target ="_blank" href= "schedule.php">
           <i class="menu-icon mdi mdi-table"></i>
           <span class="menu-title">ข้อมูลตารางปฏิบัติงาน</span>
         </a>
