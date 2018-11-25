@@ -157,7 +157,7 @@
               <a class="dropdown-item">
                 Change Password
               </a>
-              <a href="../logout.php" class="dropdown-item">
+              <a href="logout.php" class="dropdown-item">
                 Sign Out
               </a>
             </div>
