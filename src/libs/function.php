@@ -9,7 +9,7 @@ define("VERSION", "0.0.1");
 define("DB_SER", "localhost");
 define("DB_NAME", "cs_db57");
 define("DB_USR", "root");
-define("DB_PWD", "123456");
+define("DB_PWD", "574234059");
 
 //DATABASE HOST
 //define("DB_SER", "");
