@@ -9,7 +9,7 @@ if(isset($_GET['id'])){
   if ($query) {
     echo "<script>
         alert('Delete Success');
-        window.location = 'dashboard.php?file=nurse/index';
+        window.location = 'dashboard.php?file=admin/nurse/index';
       </script>";
   }else {
   echo "error";

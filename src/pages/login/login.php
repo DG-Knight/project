@@ -6,7 +6,7 @@ if(isset($_POST['login'])){  // check ปุ่ม login
   $username = $_POST['username'];
   $result = Authentication($username,$password);
   if($result){
-    header('location: ../admin/dashboard.php');
+    header('location: ../dashboard.php');
     die();
   }else{
     # ล็อกอินไม่ผ่าน

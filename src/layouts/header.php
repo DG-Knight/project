@@ -2,10 +2,10 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="index.html">
-          <img src="../../../assets/images/logo.svg" alt="logo" />
+          <img src="../../assets/images/logo.svg" alt="logo" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="index.html">
-          <img src="../../../assets/images/logo-mini.svg" />
+          <img src="../../assets/images/logo-mini.svg" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
@@ -138,7 +138,7 @@
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
               <span class="alert alert-primary">สวัสดี, <?php echo $_SESSION['AUTHEN']['FNAME']."&nbsp".$_SESSION['AUTHEN']['LNAME']?> !</span>
-              <img class="img-xs rounded-circle" src="../../../assets/images/faces/face1.jpg" alt="Profile image">
+              <img class="img-xs rounded-circle" src="../../assets/images/faces/face1.jpg" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
               <a class="dropdown-item p-0">

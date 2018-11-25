@@ -40,7 +40,7 @@ $user_level = $_POST['user_level'];
 if ($result) {
   echo "<script>
       alert('จัดการข้อมูลสำเร็จแล้ว');
-      window.location = 'dashboard.php?file=nurse/index';
+      window.location = 'dashboard.php?file=admin/nurse/index';
     </script>";
 }else {
 echo "error";

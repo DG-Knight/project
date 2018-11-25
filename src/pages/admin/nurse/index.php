@@ -4,7 +4,7 @@
       <div class="page-header">
         <h3 class="text-center text-primary">ข้อมูลพยาบาล/ผู้ช่วย</h3>
       </div>
-      <a href="dashboard.php?file=nurse/insert_nurse" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล </a>
+      <a href="dashboard.php?file=admin/nurse/insert_nurse" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล </a>
       <a href="#" class="btn btn-success"><i class="fa fa-search"></i> ค้นหา </a> <br><br>
   <div class="table-responsive">
                   <table class="table table-striped">
@@ -39,10 +39,10 @@
 
                         <td>
 
-                          <a href="dashboard.php?file=nurse/form_edit_nurse&id=<?=$data->user_id?>"class="btn btn-warning">
+                          <a href="dashboard.php?file=admin/nurse/form_edit_nurse&id=<?=$data->user_id?>"class="btn btn-warning">
                           <i class="fa fa-edit"></i></a>
 
-                          <a href="dashboard.php?file=nurse/del_nurse&id=<?=$data->user_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
+                          <a href="dashboard.php?file=admin/nurse/del_nurse&id=<?=$data->user_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
                           <i class="fa fa-spin fa-trash-o"></i></a>
                         </td>
                       </tr>

@@ -86,6 +86,9 @@ CheckAuthenticationAndAuthorization();
   echo '<th>No</th>';
   echo '<th>ชื่อ</th>';
   echo '<th>นามสกุล</th>';
+  echo '<th>ตำแหน่ง</th>';
+  echo '<th>รหัส</th>';
+
 
   //วันที่สุดท้ายของเดือน
   $timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
@@ -119,8 +122,14 @@ CheckAuthenticationAndAuthorization();
 		//$DayOfWeek = date("l", strtotime($strStartDate)); // return Sunday, Monday,Tuesday....
 
 		$strStartDate = date ("Y-m-d", strtotime("+1 day", strtotime($strStartDate)));
+
 	}
- echo "</tr>";
+  $str = array("ช","บ","ด","ชม.","ผลัด","เศษ","เก่า","ใหม่","รวม");
+  $arrlength = count($str);
+  for ($i=0; $i <$arrlength ; $i++) {
+    echo "<th>".$str[$i]."</th>";
+  }
+  echo "</tr>";
 ?>
   <?php
   $conn = PDOConnector();
@@ -135,9 +144,10 @@ CheckAuthenticationAndAuthorization();
       <td><?=$j++ ?></td>
       <td width="40%"><?=$data->user_fname;?></td>
       <td width="40%"><?=$data->user_lname;?></td>
+      <td></td>
+      <td></td>
       <?php
       for($i=1;$i<=$lastDay;$i++){
-
         $d = substr("0".$i, -2);
         echo "<td>";
         echo "<select>";
@@ -151,9 +161,16 @@ CheckAuthenticationAndAuthorization();
         echo "</td>";
       }
       ?>
-
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
   </tr>
-
 </form>
 <?php }} ?>
 

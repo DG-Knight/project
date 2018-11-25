@@ -5,7 +5,7 @@
         <div class="nav-link">
           <div class="user-wrapper">
             <div class="profile-image">
-              <img src="../../../assets/images/faces/face1.jpg" alt="profile image">
+              <img src="../../assets/images/faces/face1.jpg" alt="profile image">
             </div>
             <div class="text-wrapper">
               <p class="profile-name"><?php echo $_SESSION['AUTHEN']['FNAME']."&nbsp".$_SESSION['AUTHEN']['LNAME']?></p>
@@ -77,7 +77,7 @@
           <div class="collapse" id="basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="dashboard.php?file=nurse/index">ข้อมูลพยาบาล/ผู้ช่วย</a>
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/index">ข้อมูลพยาบาล/ผู้ช่วย</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">ข้อมูลประเภทอายุงานของพยาบาล</a>
