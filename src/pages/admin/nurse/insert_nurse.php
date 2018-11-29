@@ -5,7 +5,7 @@
         <h3 class="text-center text-primary">--ข้อมูลส่วนตัว--</h3>
       </div>
 
-<form action="dashboard.php?file=nurse/insert" method="post" id="form1"style="padding-left:100px;padding-right:100px">
+<form action="dashboard.php?file=admin/nurse/insert" method="post" id="form1"style="padding-left:100px;padding-right:100px">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="user_name">Username</label>
