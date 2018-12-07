@@ -20,19 +20,19 @@
       <!-- user -->
         <?php if ($_SESSION['AUTHEN']['LEVEL']==1) { ?>
       <li class="nav-item">
-        <a class="nav-link" href="../user/inspector.php">
+        <a class="nav-link" href="dashboard.php?file=user/inspector">
           <i class="menu-icon mdi mdi-television"></i>
-          <span class="menu-title">ผู้ตราจการ</span>
+          <span class="menu-title">ผู้ตรวจการ</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../user/leaflet.php">
+        <a class="nav-link" href="dashboard.php?file=user/leaflet">
           <i class="menu-icon mdi mdi-television"></i>
           <span class="menu-title">การลา</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../user/training.php">
+        <a class="nav-link" href="dashboard.php?file=user/training">
           <i class="menu-icon mdi mdi-television"></i>
           <span class="menu-title">การอบรม</span>
         </a>
@@ -80,20 +80,20 @@
                 <a class="nav-link" href="dashboard.php?file=admin/nurse/index">ข้อมูลพยาบาล/ผู้ช่วย</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ข้อมูลประเภทอายุงานของพยาบาล</a>
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/work_exp_type">ข้อมูลประเภทอายุงานของพยาบาล</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ข้อมูลวันหยุด</a>
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/holiday">ข้อมูลวันหยุด</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ข้อมูลช่วงระยะเวลาการเข้าเวร</a>
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/operating _time">ข้อมูลช่วงระยะเวลาการเข้าเวร</a>
               </li>
             </ul>
           </div>
         </li>
 
       <li class="nav-item">
-        <a class="nav-link" target ="_blank" href= "schedule.php">
+        <a class="nav-link" target ="_blank" href= "admin/schedule.php">
           <i class="menu-icon mdi mdi-table"></i>
           <span class="menu-title">ข้อมูลตารางปฏิบัติงาน</span>
         </a>

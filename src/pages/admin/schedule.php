@@ -91,6 +91,9 @@ CheckAuthenticationAndAuthorization();
 
 
   //วันที่สุดท้ายของเดือน
+
+
+
   $timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
   $lastDay = date("t", $timeDate);   				//จำนวนวันของเดือน
 
@@ -100,6 +103,7 @@ CheckAuthenticationAndAuthorization();
   $intTotalDay = ((strtotime($strEndDate) - strtotime($strStartDate))/  ( 60 * 60 * 24 )) + 1;
   $intWorkDay = 0;
   $intHoliday = 0;
+
   $i = 1;
   while (strtotime($strStartDate) <= strtotime($strEndDate)) {
 

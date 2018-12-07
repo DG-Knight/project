@@ -1,5 +1,5 @@
 <?php
-require '../public/function.php';
+require '../../libs/function.php';
 
 @$user_id = $_POST['user_id'];
 $user_name = $_POST['user_name'];

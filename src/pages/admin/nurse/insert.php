@@ -1,4 +1,5 @@
 <?php
+
 $user_name = $_POST['user_name'];
 $user_pass = $_POST['user_pass'];
 $user_fname = $_POST['user_fname'];
