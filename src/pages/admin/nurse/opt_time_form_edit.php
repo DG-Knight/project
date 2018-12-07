@@ -29,7 +29,7 @@
               <input type="text" class="form-control"  name="opt_time" id="opt_time" value="<?=$row->opt_time?>">
             </div>
           </div>
-          
+          <input type="hidden" name="opt_time_id" value="<?=$row->opt_time_id?>">
           <button type="submit" class="btn btn-primary">submit</button>
           <button type="reset" class="btn btn-primary">reset</button>
         </form>
