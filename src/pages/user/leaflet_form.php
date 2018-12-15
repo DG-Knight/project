@@ -2,12 +2,12 @@
   <div class="col-md-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
-      
+
        <div class="page-header" >
         <h3 class="text-center text-primary">--ใบลา--</h3>
       </div>
       <br>
-      <form action="user_insert.php" method="post" id="form"style="padding-left:250px;padding-right:100px">
+      <form action="dashboard.php?file=user/leaflet_insert" method="post" style="padding-left:250px;padding-right:100px">
   <div class="form-group row">
     <label for="colFormLabelmd" class="col-md-2">ประภาทการลา</label>
     <div class="form-group col-md-5">

@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="page-header">
-        <h3 class="text-center text-primary">--เพิ่มข้อมูลช่วงระยะเวลาการเข้าเวร--</h3>
+        <h3 class="text-center text-primary">--แก้ไขข้อมูลช่วงระยะเวลาการเข้าเวร--</h3>
       </div>
 
       <?php

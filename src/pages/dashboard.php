@@ -22,6 +22,8 @@ CheckAuthenticationAndAuthorization();
   <link rel="stylesheet" href="../../assets/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../assets/images/favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
 </head>
 
 <body>

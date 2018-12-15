@@ -93,9 +93,16 @@ CheckAuthenticationAndAuthorization();
   //วันที่สุดท้ายของเดือน
 
 
+  $conn = PDOConnector();
+  $sql="select * from holiday where publicholiday = '".$strChkDate."' ";
+  $query = $conn->prepare($sql);
+  $query ->execute();
+  $row=$query -> fetch(PDO::FETCH_OBJ);
+
 
   $timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
   $lastDay = date("t", $timeDate);   				//จำนวนวันของเดือน
+
 
   //สร้างหัวตารางตั้งแต่วันที่ 1 ถึงวันที่สุดท้ายของดือน
   $strStartDate = $year."-".$month."-"."01" ;
@@ -103,7 +110,7 @@ CheckAuthenticationAndAuthorization();
   $intTotalDay = ((strtotime($strEndDate) - strtotime($strStartDate))/  ( 60 * 60 * 24 )) + 1;
   $intWorkDay = 0;
   $intHoliday = 0;
-
+  $intPublicHoliday = 0;
   $i = 1;
   while (strtotime($strStartDate) <= strtotime($strEndDate)) {
 
@@ -118,7 +125,12 @@ CheckAuthenticationAndAuthorization();
       $intHoliday++;
       echo "<th bgcolor=purple><center><font color=white>".$i++."</font></center></th>";
     }
-		else
+		else if ($strStartDate)
+    {
+      $intPublicHoliday++;
+      echo "<th bgcolor=orange><center><font color=white>".$i++."</font></center></th>";
+    }
+    else
 		{
 			$intWorkDay++;
 			echo "<th><center><b>".$i++."</b></center></th>";
@@ -128,7 +140,7 @@ CheckAuthenticationAndAuthorization();
 		$strStartDate = date ("Y-m-d", strtotime("+1 day", strtotime($strStartDate)));
 
 	}
-  $str = array("ช","บ","ด","ชม.","ผลัด","เศษ","เก่า","ใหม่","รวม");
+  $str = array("ช","บ","ด","ชม.","รวม");
   $arrlength = count($str);
   for ($i=0; $i <$arrlength ; $i++) {
     echo "<th>".$str[$i]."</th>";
@@ -170,12 +182,12 @@ CheckAuthenticationAndAuthorization();
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+
+
   </tr>
+
 </form>
+
 <?php }} ?>
 
 <!-- plugins:js -->
