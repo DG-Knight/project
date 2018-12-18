@@ -16,7 +16,7 @@ $description = $_POST['description'];
 if ($result) {
   echo "<script>
       alert('จัดการข้อมูลสำเร็จแล้ว');
-      window.location = 'dashboard.php?file=admin/nurse/holiday';
+      window.location = 'dashboard.php?file=admin/nurse/';
     </script>";
 }else {
 echo "error";

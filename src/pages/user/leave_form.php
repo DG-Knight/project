@@ -38,6 +38,7 @@
       <input type="text" class="form-control form-control" id="colFormLabelss" placeholder="********" name="total">
     </div>
     </div>
+  <input type="hidden" name="user_id" value="<?=$row->user_id?>">
   <button type="submit" class="btn btn-primary">submit</button>
 </form>
 

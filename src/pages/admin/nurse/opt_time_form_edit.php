@@ -17,7 +17,7 @@
             <div class="form-group col-md-4">
               <label for="opt_name">ช่วงเวลา</label>
               <select id="opt_name" name="opt_name" class="form-control" value="<?=$row->opt_name?>">
-
+                  <option>-</option>
                   <option>เช้า</option>
                   <option>บ่าย</option>
                   <option>ดึก</option>

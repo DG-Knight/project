@@ -72,7 +72,7 @@ CheckAuthenticationAndAuthorization();
   	</table>
   </form>
 
-  <form style="overflow: auto;">
+  <form style="overflow:auto;">
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -87,7 +87,7 @@ CheckAuthenticationAndAuthorization();
   echo '<th>ชื่อ</th>';
   echo '<th>นามสกุล</th>';
   echo '<th>ตำแหน่ง</th>';
-  echo '<th>รหัส</th>';
+
 
 
   //วันที่สุดท้ายของเดือน
@@ -161,14 +161,15 @@ CheckAuthenticationAndAuthorization();
       <td width="40%"><?=$data->user_fname;?></td>
       <td width="40%"><?=$data->user_lname;?></td>
       <td></td>
-      <td></td>
+
       <?php
       for($i=1;$i<=$lastDay;$i++){
-        $d = substr("0".$i, -2);
+        $d = substr("0".$i,-2);
         echo "<td>";
         echo "<select>";
+        echo "<option value='-'>-";
         echo "<option value='ช'>ช";
-        echo "<option value='บ'>บ";
+        echo "<option  value='บ'>บ ";
         echo "<option value='ด'>ด";
         echo "<option value='0'>0";
         echo "<option value='VAC'>VAC";
