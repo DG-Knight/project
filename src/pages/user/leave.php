@@ -23,16 +23,17 @@
                       <tbody>
 
                         <?php
-
+                        $id = $_SESSION['AUTHEN']['UID'];
 
                         $conn = PDOConnector();
-                        $sql  = 'SELECT users.user_fname,users.user_lname,leave.leave_type_id,leave.leave_start,leave.leave_end,leave.total FROM `leave`
-                        INNER JOIN users ON users.user_id = leave.user_id where user_id = '".$_SESSION['AUTHEN']['UID']."'';
+                        // $sql  = "SELECT users.user_fname,users.user_lname,leave.leave_type_id,leave.leave_start,leave.leave_end,leave.total FROM `leave`
+                        // INNER JOIN users ON users.user_id = leave.user_id WHERE user_id=$id";
+                        $sql = "SELECT * FROM leaves INNER JOIN users ON leaves.user_id=users.user_id WHERE users.user_id=$id";
                         $query = $conn->prepare($sql);
                         $query->execute();
                            if ($query->rowCount()>0) {
                              $i = 1;
-                             echo "$user_id";
+                             // echo "$user_id";
                              while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
                         ?>
                         <tr>
@@ -45,7 +46,6 @@
                           <td><?=$data->total;?></td>
 
                           <td>
-
 
                           </td>
                         </tr>
