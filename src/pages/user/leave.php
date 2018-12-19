@@ -5,7 +5,7 @@
       <div class="page-header">
         <h3 class="text-center text-primary">--การลา--</h3>
       </div>
-
+<a href="dashboard.php?file=user/leave_form" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มการลา </a>
   <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
@@ -16,6 +16,7 @@
                       <th scope="col"><b>วันที่เริ่มลา</b></th>
                       <th scope="col"><b>วันที่สิ้นสุด</b></th>
                       <th scope="col"><b>จำนวนวันที่ลา</b></th>
+                      <th scope="col"><b>จัดการ</b></th>
 
 
 
@@ -26,14 +27,13 @@
                         $id = $_SESSION['AUTHEN']['UID'];
 
                         $conn = PDOConnector();
-                        // $sql  = "SELECT users.user_fname,users.user_lname,leave.leave_type_id,leave.leave_start,leave.leave_end,leave.total FROM `leave`
-                        // INNER JOIN users ON users.user_id = leave.user_id WHERE user_id=$id";
+
                         $sql = "SELECT * FROM leaves INNER JOIN users ON leaves.user_id=users.user_id WHERE users.user_id=$id";
                         $query = $conn->prepare($sql);
                         $query->execute();
                            if ($query->rowCount()>0) {
                              $i = 1;
-                             // echo "$user_id";
+                            // echo "$id";
                              while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
                         ?>
                         <tr>
@@ -46,7 +46,11 @@
                           <td><?=$data->total;?></td>
 
                           <td>
+                            <a href="dashboard.php?file=user/leave_form_edit&id=<?=$data->leave_id?>"class="btn btn-warning">
+                            <i class="fa fa-edit"></i></a>
 
+                            <a href="dashboard.php?file=user/leave_del&id=<?=$data->leave_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
+                            <i class="fa fa-trash-o"></i></a>
                           </td>
                         </tr>
                         <?php }}//EndRowCount&&WhileLoop ?>

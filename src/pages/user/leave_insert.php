@@ -1,22 +1,27 @@
 <?php
 
-$fisyear = $_POST['fisyear'];
-$publicholiday = $_POST['publicholiday'];
-$description = $_POST['description'];
+$user_id = $_POST['user_id'];
+$leave_type_id = $_POST['leave_type_id'];
+$leave_start = $_POST['leave_start'];
+$leave_end = $_POST['leave_end'];
+$total = $_POST['total'];
 
 
   $conn = PDOConnector();
-  $result = $conn->prepare('INSERT INTO holiday(fisyear, publicholiday, description) VALUES(:fisyear, :publicholiday, :description)');
+  $result = $conn->prepare('INSERT INTO leaves(user_id, leave_type_id, leave_start, leave_end, total)VALUES(:user_id, :leave_type_id, :leave_start, :leave_end, :total)');
   $result ->execute([
-    "fisyear"=>$fisyear,
-    "publicholiday"=>$publicholiday,
-    "description"=>$description
+
+    "user_id"=>$user_id,
+    "leave_type_id"=>$leave_type_id,
+    "leave_start"=>$leave_start,
+    "leave_end"=>$leave_end,
+    "total"=>$total
 
   ]);
 if ($result) {
   echo "<script>
       alert('จัดการข้อมูลสำเร็จแล้ว');
-      window.location = 'dashboard.php?file=admin/nurse/';
+
     </script>";
 }else {
 echo "error";
