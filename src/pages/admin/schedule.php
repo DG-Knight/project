@@ -57,7 +57,7 @@ CheckAuthenticationAndAuthorization();
   					$txtYear = (isset($_POST['txt_year']) && $_POST['txt_year'] != '') ? $_POST['txt_year'] : date('Y');
 
   					$yearStart = date('Y');
-  					$yearEnd = $txtYear-3;
+  					$yearEnd = $txtYear -3;
 
   					for($year=$yearStart;$year > $yearEnd;$year--){
   						$selected = '';
