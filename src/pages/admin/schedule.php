@@ -22,7 +22,18 @@ CheckAuthenticationAndAuthorization();
   <link rel="stylesheet" href="../../../assets/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="../../../assets/images/favicon.png" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+<script>
+$(document).ready(function(){
+  $("#myval").text("test")
+  $("select").blur(function(){
+    //alert("ff");
+    $("#myval").text( $(this).attr('name')+$(this).val());
+
+  });
+});
+</script>
 
 <body>
 
@@ -56,8 +67,8 @@ CheckAuthenticationAndAuthorization();
   					<?php
   					$txtYear = (isset($_POST['txt_year']) && $_POST['txt_year'] != '') ? $_POST['txt_year'] : date('Y');
 
-  					$yearStart = date('Y');
-  					$yearEnd = $txtYear -3;
+  					$yearEnd <= date('Y');
+  					$yearStart = $txtYear +3;
 
   					for($year=$yearStart;$year > $yearEnd;$year--){
   						$selected = '';
@@ -67,12 +78,16 @@ CheckAuthenticationAndAuthorization();
   					?>
   				</select>
   			</td>
-  			<td><input type="submit" value="ค้นหา" /></td>
+
+  			<td><input type="submit" value="ค้นหา" id="myval" name=""></td>
+      <!--  <td><input type="submit" name="" value="save"><label id="myval">sss</label></td> -->
+
   		</tr>
   	</table>
   </form>
 
-  <form style="overflow:auto;">
+  <form  method="POST" style="overflow:auto;" action="test.php">
+
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -90,15 +105,24 @@ CheckAuthenticationAndAuthorization();
 
 
 
+  function CheckPublicHoliday($strChkDate)
+	{
+    $conn = PDOConnector();
+    $sql="select * from holiday where publicholiday = '".$strChkDate."' ";
+    $query = $conn->prepare($sql);
+    $query ->execute();
+    $row=$query -> fetch(PDO::FETCH_OBJ);
+		if(!$row)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+
+	}
   //วันที่สุดท้ายของเดือน
-
-
-  $conn = PDOConnector();
-  $sql="select * from holiday where publicholiday = '".$strChkDate."' ";
-  $query = $conn->prepare($sql);
-  $query ->execute();
-  $row=$query -> fetch(PDO::FETCH_OBJ);
-
 
   $timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
   $lastDay = date("t", $timeDate);   				//จำนวนวันของเดือน
@@ -125,11 +149,13 @@ CheckAuthenticationAndAuthorization();
       $intHoliday++;
       echo "<th bgcolor=purple><center><font color=white>".$i++."</font></center></th>";
     }
-		else if ($strStartDate)
+    else if(CheckPublicHoliday($strStartDate))
     {
-      $intPublicHoliday++;
-      echo "<th bgcolor=orange><center><font color=white>".$i++."</font></center></th>";
+    $intPublicHoliday++;
+    echo "<th bgcolor=orange><center><font color=white>".$i++."</font></center></th>";
+
     }
+
     else
 		{
 			$intWorkDay++;
@@ -147,6 +173,7 @@ CheckAuthenticationAndAuthorization();
   }
   echo "</tr>";
 ?>
+
   <?php
   $conn = PDOConnector();
   $sql = 'SELECT * FROM users where user_level != 0';
@@ -165,18 +192,21 @@ CheckAuthenticationAndAuthorization();
       <?php
       for($i=1;$i<=$lastDay;$i++){
         $d = substr("0".$i,-2);
+
         echo "<td>";
-        echo "<select>";
+        echo "<select name='".$data->user_id."_".$i."'>";
         echo "<option value='-'>-";
         echo "<option value='ช'>ช";
-        echo "<option  value='บ'>บ ";
+        echo "<option value='บ'>บ ";
         echo "<option value='ด'>ด";
         echo "<option value='0'>0";
         echo "<option value='VAC'>VAC";
         echo "<option value='S2'>S2";
         echo "</select>";
         echo "</td>";
+
       }
+
       ?>
       <td></td>
       <td></td>
@@ -187,10 +217,11 @@ CheckAuthenticationAndAuthorization();
 
   </tr>
 
+  <input type="submit" name="submit" value="submit">
+
 </form>
 
 <?php }} ?>
-
 <!-- plugins:js -->
 <script src="vendors/js/vendor.bundle.base.js"></script>
 <script src="vendors/js/vendor.bundle.addons.js"></script>
