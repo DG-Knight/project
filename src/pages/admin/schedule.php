@@ -87,7 +87,8 @@ $(document).ready(function(){
   </form>
 
   <form  method="POST" style="overflow:auto;" action="test.php">
-
+    <input type="submit" name="submit" value="submit">
+    <br>
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -217,11 +218,12 @@ $(document).ready(function(){
 
   </tr>
 
-  <input type="submit" name="submit" value="submit">
 
-</form>
 
 <?php }} ?>
+</table>
+
+</form>
 <!-- plugins:js -->
 <script src="vendors/js/vendor.bundle.base.js"></script>
 <script src="vendors/js/vendor.bundle.addons.js"></script>
