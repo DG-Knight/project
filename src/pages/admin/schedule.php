@@ -86,8 +86,9 @@ $(document).ready(function(){
   	</table>
   </form>
 
-  <form  method="POST" style="overflow:auto;" action="test.php">
-    <input type="submit" name="submit" value="submit">
+  <form  method="POST" style="overflow:auto;" action="test.php" ><br>
+<div class="button-center"style="padding-left:50px;">
+  <input type="submit" name="submit" value="submit"></div>
     <br>
   <?php
 

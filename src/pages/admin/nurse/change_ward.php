@@ -37,10 +37,8 @@
                           <td><?=$data->opt_names;?></td>
                           <td>
 
-                            <a href="dashboard.php?file=admin/nurse/&id=<?=$data->change_ward_id?>"class="btn btn-warning">
-                            <i class="fa fa-edit"></i></a>
 
-                            <a href="dashboard.php?file=admin/nurse/&id=<?=$data->change_ward_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
+                            <a href="dashboard.php?file=admin/nurse/change_ward_del&id=<?=$data->change_ward_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
                             <i class="fa fa-trash-o"></i></a>
                           </td>
                         </tr>
