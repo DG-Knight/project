@@ -113,19 +113,19 @@
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item">
-              <a class="nav-link" href="pages/samples/blank-page.html"> การเข้าเวรของแต่ละวัน/ดือน/ช่วงเวลา </a>
+              <a class="nav-link" href="#"> การเข้าเวรของแต่ละวัน/ดือน/ช่วงเวลา </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/samples/login.html"> การลาแต่ละเดือน </a>
+              <a class="nav-link" target ="_blank" href="admin/report_leave.php"> การลาแต่ละเดือน </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/samples/register.html"> การอบรมแต่ละเดือน </a>
+              <a class="nav-link" target ="_blank" href="admin/report_training.php"> การอบรมแต่ละเดือน </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/samples/error-404.html">การค้างวอร์ด/วอร์ดค้าง </a>
+              <a class="nav-link" href="#">การค้างวอร์ด/วอร์ดค้าง </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/samples/error-500.html"> วันหยุด </a>
+              <a class="nav-link"target ="_blank"href="admin/report_holiday.php"> วันหยุด </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="pages/samples/error-500.html"> ชั่วโมงการทำงานนอกเวลา(OT) </a>

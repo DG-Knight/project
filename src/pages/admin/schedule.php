@@ -25,14 +25,28 @@ CheckAuthenticationAndAuthorization();
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <script>
+let cha1 = 0;// ช
+let cha2 = 0;// บ
 $(document).ready(function(){
-  $("#myval").text("test")
+  $("#myval2").text("test")
   $("select").blur(function(){
     //alert("ff");
-    $("#myval").text( $(this).attr('name')+$(this).val());
+    $("#myval2").text( $(this).attr('name')+$(this).val());
+
+    if ( $(this).val()=="ช"){
+      $("#myval3").text("ช ="+(cha1+1));
+      cha1++;
+
+    }
+    else if ( $(this).val()=="บ"){
+      $("#myval4").text("บ ="+(cha2+1));
+      cha2++;
+
+    }
 
   });
 });
+
 </script>
 
 <body>
@@ -80,16 +94,44 @@ $(document).ready(function(){
   			</td>
 
   			<td><input type="submit" value="ค้นหา" id="myval" name=""></td>
-      <!--  <td><input type="submit" name="" value="save"><label id="myval">sss</label></td> -->
+        <td><input type="submit" name="" value="save"><label id="myval2">sss</label></td>
 
   		</tr>
+
   	</table>
+
+    <ul class="list-unstyled text-danger">
+
+  <h5>*กรณีการเข้าเวรของพยาบาลในแต่ละเดือน*
+    <ul>
+      <li>หมายเลข 1 และ 10 ต้องเข้าเวรเช้าและหยุดวันราชการ</li>
+      <li >หมายเลข 2 3 4 และ 5 ต้องเข้าเวรบ่าย 5 ครั้งและเข้าเวรดึก 4 ครั้ง นอกจากนั้นเข้าเวรเช้ามั้งหมด </li>
+      <li>หมายเลข 6 7 8 และ 9 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 5 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+      <li>หมายเลข 11 และ 12 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 6 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+      <li>หมายเลข 13 และ 14 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 7-8 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+    </ul>
+  </h5>
+
+</ul>
+
+  <ul class="list-inline text-center">
+    <h6 class="text-danger list-inline-item">*ช = เช้า</h6>
+    <h6 class="text-danger list-inline-item">*บ = บ่าย</h6>
+    <h6 class="text-danger list-inline-item">*ด = ดึก</h6>
+    <h6 class="text-danger list-inline-item">*v = ลาพักร้อน</h6>
+    <h6 class="text-danger list-inline-item">*s2 = ผู้ตรวจการ</h6>
+  </ul>
   </form>
 
-  <form  method="POST" style="overflow:auto;" action="test.php" ><br>
+
+<label id="myval3">ช = 0</label>
+<label id="myval4">บ = 0</label>
+
+  <form  method="POST" style="overflow:auto;" action="test.php" >
 <div class="button-center"style="padding-left:50px;">
+
   <input type="submit" name="submit" value="submit"></div>
-    <br>
+
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -98,12 +140,12 @@ $(document).ready(function(){
 
   if($year == '' || $month == '');
 
-  echo "<br><table border='1'cellpadding='5'>";
+  echo "<br><table border='1'cellpadding='2' >";
   echo '<tr>';//เปิดแถวใหม่ ตาราง HTML
   echo '<th>No</th>';
-  echo '<th>ชื่อ</th>';
-  echo '<th>นามสกุล</th>';
-  echo '<th>ตำแหน่ง</th>';
+  echo '<th > ชื่อ - นามสกุล </th>';
+
+
 
 
 
@@ -168,12 +210,15 @@ $(document).ready(function(){
 		$strStartDate = date ("Y-m-d", strtotime("+1 day", strtotime($strStartDate)));
 
 	}
-  $str = array("ช","บ","ด","ชม.","รวม");
-  $arrlength = count($str);
-  for ($i=0; $i <$arrlength ; $i++) {
-    echo "<th>".$str[$i]."</th>";
-  }
+  //$str = array("เช้า","่บ่าย","ดึก","ชั่วโมง","รวม");
+  //$arrlength = count($str);
+  //for ($i=0; $i <$arrlength ; $i++) {
+  //  echo "<th>".$str[$i]."</th>";
+//  }
   echo "</tr>";
+
+
+
 ?>
 
   <?php
@@ -186,43 +231,48 @@ $(document).ready(function(){
        while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
   ?>
   <tr>
+    <!--ชื่อ-นามสกุล-->
       <td><?=$j++ ?></td>
-      <td width="40%"><?=$data->user_fname;?></td>
-      <td width="40%"><?=$data->user_lname;?></td>
-      <td></td>
+      <td  widht="100%"  align="center"><?=$data->user_fname;?>&nbsp<?=$data->user_lname;?></td>
+
 
       <?php
       for($i=1;$i<=$lastDay;$i++){
-        $d = substr("0".$i,-2);
 
+        // $data->user_id."_".$i = 'ช';
+        $nametable =$data->user_id."_".$i;
+
+
+        // }
+        $d = substr("0".$i,-2);
         echo "<td>";
-        echo "<select name='".$data->user_id."_".$i."'>";
+        echo "<select style='font-size:9pt;'name='".$nametable."' >";
         echo "<option value='-'>-";
         echo "<option value='ช'>ช";
         echo "<option value='บ'>บ ";
         echo "<option value='ด'>ด";
         echo "<option value='0'>0";
-        echo "<option value='VAC'>VAC";
-        echo "<option value='S2'>S2";
+        echo "<option value='V'>V";
+        echo "<option value='s2'>s2";
         echo "</select>";
         echo "</td>";
 
       }
 
       ?>
+    <!--  <td></td>
       <td></td>
       <td></td>
       <td></td>
       <td></td>
-      <td></td>
-
+-->
 
   </tr>
 
 
 
 <?php }} ?>
-</table>
+</table >
 
 </form>
 <!-- plugins:js -->
@@ -238,7 +288,15 @@ $(document).ready(function(){
 <!-- Custom js for this page-->
 <script src="js/dashboard.js"></script>
 <!-- End custom js for this page-->
-
+<h5>*กรณีการเข้าเวรของพยาบาลในแต่ละเดือน*
+  <ul>
+    <li>หมายเลข 1 และ 10 ต้องเข้าเวรเช้าและหยุดวันราชการ</li>
+    <li>หมายเลข 2 3 4 และ 5 ต้องเข้าเวรบ่าย 5 ครั้งและเข้าเวรดึก 4 ครั้งนอกจากนั้นเข้าเวรเช้ามั้งหมด </li>
+    <li>หมายเลข 6 7 8 และ 9 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 5 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+    <li>หมายเลข 11 และ 12 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 6 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+    <li>หมายเลข 13 และ 14 ต้องเข้าเวรบ่าย 7-8 ครั้ง และ เข้าเวรดึก 7-8 ครั้ง นอกจากนั้นเวรเช้าหมด</li>
+  </ul>
+</h5>
 </body>
 
 </html>

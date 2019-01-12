@@ -5,7 +5,7 @@
         <h3 class="text-center text-primary">ข้อมูลพยาบาล/ผู้ช่วย</h3>
       </div>
       <a href="dashboard.php?file=admin/nurse/insert_nurse" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูล </a>
-      <a href="#" class="btn btn-success"><i class="fa fa-search"></i> ค้นหา </a> <br><br>
+      <!--<a href="#" class="btn btn-success"><i class="fa fa-search"></i> ค้นหา </a> <br><br> -->
   <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
