@@ -20,6 +20,12 @@
       <!-- user -->
         <?php if ($_SESSION['AUTHEN']['LEVEL']==1) { ?>
       <li class="nav-item">
+        <a class="nav-link" href="dashboard.php?file=user/personal">
+          <i class="menu-icon mdi mdi-television"></i>
+          <span class="menu-title">ข้อมูลส่วนตัว</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="dashboard.php?file=user/inspector">
           <i class="menu-icon mdi mdi-television"></i>
           <span class="menu-title">ผู้ตรวจการ</span>
@@ -45,20 +51,13 @@
         </a>
         <div class="collapse" id="ui-basic">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/buttons.html">ตารางเวรของพยาบาล/ผู้ช่วย</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="pages/ui-features/typography.html">การเข้าเวรของตนเอง</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/typography.html">การค้างวอร์ด/วอร์ดค้าง ของตนเอง</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="pages/ui-features/typography.html">วันหยุดของตนเอง</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/typography.html">ชั่วโมงการทำงานนอกเวลา(OT)ของตนเอง</a>
             </li>
           </ul>
         </div>
@@ -113,23 +112,18 @@
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item">
-              <a class="nav-link" href="#"> การเข้าเวรของแต่ละวัน/ดือน/ช่วงเวลา </a>
+              <a class="nav-link" href="#"> การเข้าเวรของแต่ละเดือน </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" target ="_blank" href="admin/report_leave.php"> การลาแต่ละเดือน </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" target ="_blank" href="admin/report_training.php"> การอบรมแต่ละเดือน </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">การค้างวอร์ด/วอร์ดค้าง </a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link"target ="_blank"href="admin/report_holiday.php"> วันหยุด </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="pages/samples/error-500.html"> ชั่วโมงการทำงานนอกเวลา(OT) </a>
-            </li>
+
           </ul>
         </div>
       </li>
@@ -137,6 +131,12 @@
 
 <!--section master menu-->
 <?php if ($_SESSION['AUTHEN']['LEVEL']==2) { ?>
+  <li class="nav-item">
+    <a class="nav-link" href="dashboard.php?file=admin/nurse/index">
+      <i class="menu-icon mdi mdi-television"></i>
+      <span class="menu-title">ข้อมูลพยาบาล</span>
+    </a>
+  </li>
 <li class="nav-item">
 <a class="nav-link" data-toggle="collapse" href="#basic0" aria-expanded="false" aria-controls="basic0">
 <i class="menu-icon mdi mdi-content-copy"></i>
@@ -146,7 +146,7 @@
 <div class="collapse" id="basic0">
 <ul class="nav flex-column sub-menu">
   <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/buttons.html">การเข้าเวรของแต่ละวัน/ดือน/ช่วงเวลา</a>
+    <a class="nav-link" href="pages/ui-features/buttons.html">การเข้าเวรของแต่ละเดือน</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="pages/ui-features/typography.html">การลาแต่ละเดือน</a>
@@ -154,15 +154,10 @@
   <li class="nav-item">
     <a class="nav-link" href="pages/ui-features/typography.html">การอบรมแต่ละเดือน</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/typography.html">การค้างวอร์ด/วอร์ดค้าง</a>
-  </li>
+
   <li class="nav-item">
     <a class="nav-link" href="pages/ui-features/typography.html">วันหยุด</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/typography.html">ชั่วโมงการทำงานนอกเวลา(OT)</a>
-  </li>
+
 </ul>
 </div>
 </li>

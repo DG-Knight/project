@@ -10,7 +10,7 @@
       $row=$query -> fetch(PDO::FETCH_OBJ);
       ?>
        <div class="page-header" >
-        <h3 class="text-center text-primary">--ใบลา--</h3>
+        <h3 class="text-center text-primary">--แก้ไขการลา--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/leave_edit" method="post" style="padding-left:250px;padding-right:100px">

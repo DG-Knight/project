@@ -10,7 +10,7 @@
     $row=$query -> fetch(PDO::FETCH_OBJ);
     ?>
        <div class="page-header" >
-        <h3 class="text-center text-primary">--ใบอบรม--</h3>
+        <h3 class="text-center text-primary">--แก้ไขอบรม--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/training_edit" method="post" style="padding-left:250px;padding-right:100px">

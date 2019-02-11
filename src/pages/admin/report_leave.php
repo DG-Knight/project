@@ -12,7 +12,7 @@ $pdf->Output();
 ob_start();
 ?>
 <?php
-
+  
     $conn = PDOConnector();
     $sql = "SELECT * FROM leaves INNER JOIN users ON leaves.user_id=users.user_id ";
     $query = $conn->prepare($sql);

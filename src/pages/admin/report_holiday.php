@@ -11,10 +11,12 @@ $pdf->Output();
 */
 ob_start();
 ?>
+
 <?php
 
+
     $conn = PDOConnector();
-    $sql = 'SELECT * FROM holiday';
+    $sql = "SELECT * FROM holiday where YEAR(publicholiday) = 2019";//เรียกได้เฉพาะปีที่กำหนด
     $query = $conn->prepare($sql);
     $query->execute();
        if ($query->rowCount()>0) {
@@ -32,18 +34,26 @@ ob_start();
     }
 
 
-$mpdf = new mPDF();
 
+$footer = "<table name='footer' width=\"1000\">
+
+            <tr>
+            <td style='font-size: 18px;' align=\"right\">วันที่พิมพ์ : {DATE d-m-Y}</td>
+            </tr>
+           <tr>
+             <td style='font-size: 18px; padding-bottom: 20px;' align=\"center\">Page{PAGENO}</td>
+           </tr>
+
+
+         </table>";
 $head = '
-<style>
-    body{
-        font-family: "Garuda";//เรียกใช้font Garuda สำหรับแสดงผล ภาษาไทย
-    }
-</style>
 
-<h2 style="text-align:center">รายงานวันหยุด</h2>
+    <h2 style="text-align:center">รายงานวันหยุด</h2>
+    <tr>
+    <td  style="border-right:1px solid #000;padding:4px;text-align:right;" width="10%">ตัวอย่างรายงาน</td>
+    </tr>
 
-<table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:8px;">
+    <table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:50px;">
     <tr style="border:1px solid #000;padding:4px;">
         <td  style="border-right:1px solid #000;padding:4px;text-align:center;"   width="10%">ลำดับ</td>
         <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="15%">ปี</td>
@@ -52,17 +62,23 @@ $head = '
 
     </tr>
 
-</thead>
+    </thead>
+
     <tbody>';
+
 
 $end = "</tbody>
 </table>";
 
-$mpdf->WriteHTML($head);
+$pdf = new mPDF('th', 'A4', '0', '');
+$pdf->AddPage();
 
-$mpdf->WriteHTML($content);
+$pdf->WriteHTML($head);
+$pdf->WriteHTML($content);
 
-$mpdf->WriteHTML($end);
+$pdf->SetFooter($footer);
 
-$mpdf->Output();
+$pdf->WriteHTML($end);
+
+$pdf->Output();
 ?>

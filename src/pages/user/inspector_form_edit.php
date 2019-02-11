@@ -10,7 +10,7 @@
       ?>
 
        <div class="page-header" >
-        <h3 class="text-center text-primary">--ใบผู้ตรวจการ--</h3>
+        <h3 class="text-center text-primary">--แก้ไขผู้ตรวจการ--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/inspector_edit" method="post" id="form"style="padding-left:250px;padding-right:100px">

@@ -4,7 +4,7 @@
     <div class="card-body">
 
        <div class="page-header" >
-        <h3 class="text-center text-primary">--ใบลา--</h3>
+        <h3 class="text-center text-primary">--เพิ่มการลา--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/leave_insert" method="post" style="padding-left:250px;padding-right:100px">
