@@ -1,10 +1,11 @@
+
 <div class="col-md-12 grid-margin stretch-card">
   <div class="card">
     <div class="card-body">
       <div class="page-header">
         <h3 class="text-center text-primary">--วันหยุด--</h3>
       </div>
-      <a href="dashboard.php?file=admin/nurse/holiday_form_insert" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มวันหยุด </a>
+      <a href="dashboard.php?file=admin/nurse/holiday_form_insert" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูลวันหยุด </a>
   <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
@@ -12,7 +13,7 @@
                       <th scope="col"><b>#</b></th>
                       <th scope="col"><b>ปี</b></th>
                       <th scope="col"><b>วันหยุด</b></th>
-                      <th scope="col"><b>หมายเหตุ</b></th>
+                      <th scope="col"><b>ชื่อวันหยุด</b></th>
                       <th scope="col"><b>จัดการ</b></th>
 
 
@@ -20,8 +21,9 @@
                       <tbody>
 
                         <?php
+
                         $conn = PDOConnector();
-                        $sql = 'SELECT * FROM holiday';
+                        $sql = 'SELECT * FROM holiday where year(publicholiday) = 2019';
                         $query = $conn->prepare($sql);
                         $query->execute();
                            if ($query->rowCount()>0) {
@@ -38,7 +40,7 @@
                             <a href="dashboard.php?file=admin/nurse/holiday_form_edit&id=<?=$data->holiday_id?>"class="btn btn-warning">
                             <i class="fa fa-edit"></i></a>
 
-                            <a href="dashboard.php?file=admin/nurse/holiday_del&id=<?=$data->holiday_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
+                            <a href="dashboard.php?file=admin/nurse/holiday_del&id=<?=$data->holiday_id?>"onclick="return confirm('ยืนยันการลบ')"class="btn btn-danger">
                             <i class="fa fa-trash-o"></i></a>
                           </td>
                         </tr>

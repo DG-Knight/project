@@ -12,7 +12,7 @@
                       <th scope="col"><b>#</b></th>
                       <th scope="col"><b>ชื่อ</b></th>
                       <th scope="col"><b>นามสกุล</b></th>
-                      <th scope="col"><b>ที่อยู่</b></th>
+                      <th scope="col"><b>ตำแหน่ง</b></th>
                       <th scope="col"><b>เบอร์โทรศัพท์</b></th>
                       <th scope="col"><b>จัดการ</b></th>
                       </tr>
@@ -34,7 +34,7 @@
                         <td><?=$i++ ?></td>
                         <td><?=$data->user_fname;?></td>
                         <td><?=$data->user_lname;?></td>
-                        <td><?=$data->user_add;?></td>
+                        <td><?=$data->user_position;?></td>
                         <td><?=$data->user_tel;?></td>
 
                         <td>

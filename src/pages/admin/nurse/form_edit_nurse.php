@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-body">
       <div class="page-header" >
-        <h3 class="text-center text-primary">--แก้ไขข้อมูลส่วนตัว--</h3>
+        <h3 class="text-center text-primary">--แก้ไขข้อมูลพยาบาล--</h3>
       </div>
 <?php
 $conn = PDOConnector();
@@ -43,19 +43,32 @@ $row=$query -> fetch(PDO::FETCH_OBJ);
   <div class="form-row">
     <div class="form-group col-md-4">
       <label for="user_position">ตำแหน่ง</label>
-      <select id="user_position" name="user_position" class="form-control" value="<?=$row->user_position?>">
-
-        <option>...1</option>
-        <option>...2</option>
-        <option>...3</option>
+      <select id="user_position" name="user_position" class="form-control">
+        <option selected></option>
+        <option>พยาบาลชำนาญการ</option>
+        <option>พยาบาลปฏิบัติการ</option>
+        <option>พยาบาลชำนาญการพิเศษ</option>
       </select>
     </div>
 
     <div class="form-group col-md-4">
       <label for="user_level">level</label>
-      <select id="user_level"  name="user_level"class="form-control"  value="<?=$row->user_level?>">
-        <option>1</option>
-        <option>2</option>
+      <select id="user_level"  name="user_level"class="form-control">
+
+        <?php
+        $id = $_SESSION['AUTHEN']['UID'];
+        $conn = PDOConnector();
+        $sql = "SELECT * FROM users where user_id=$_GET[id]";
+        $query = $conn->prepare($sql);
+        $query->execute();
+           if ($query->rowCount()>0) {
+             while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
+        ?>
+        <option><?=$data->user_level;?><option>
+        <option>0<option>
+        <option>1<option>
+        <option>2<option>
+        <?php }} ?>
       </select>
     </div>
 
@@ -65,8 +78,8 @@ $row=$query -> fetch(PDO::FETCH_OBJ);
     </div>
   </div>
   <input type="hidden" name="user_id" value="<?=$row->user_id?>">
-  <button type="submit" class="btn btn-primary">save</button>
-  <button type="reset" class="btn btn-primary">reset</button>
+  <button type="submit" class="btn btn-primary">บันทึก</button>
+  <button type="reset" class="btn btn-primary">รีเซ็ต</button>
 </form>
 </div><!--end card-->
 </div><!--end card-body-->

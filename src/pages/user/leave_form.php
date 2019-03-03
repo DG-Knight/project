@@ -4,7 +4,7 @@
     <div class="card-body">
 
        <div class="page-header" >
-        <h3 class="text-center text-primary">--เพิ่มการลา--</h3>
+        <h3 class="text-center text-primary">--เพิ่มข้อมูลการลา--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/leave_insert" method="post" style="padding-left:250px;padding-right:100px">
@@ -32,14 +32,10 @@
       <input type="date"  name="leave_end">
     </div>
   </div>
-    <div class="form-group row">
-    <label for="colFormLabelss" class="col-md-3">จำนวนวันที่ลา</label>
-    <div class="col-md-2">
-      <input type="text" class="form-control form-control" id="colFormLabelss" placeholder="********" name="total">
-    </div>
-    </div>
 
-  <button type="submit" class="btn btn-primary">submit</button>
+
+  <button type="submit" class="btn btn-primary">บันทึก</button>
+  <button type="reset" class="btn btn-primary">รีเซ็ต</button>
 </form>
 
     </div>

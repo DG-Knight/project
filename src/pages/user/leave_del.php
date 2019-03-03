@@ -8,11 +8,11 @@ if(isset($_GET['id'])){
 	}
   if ($query) {
     echo "<script>
-        alert('Delete Success');
+        alert('ลบ้อมูลสำเร็จแล้ว');
         window.location = 'dashboard.php?file=user/leave';
       </script>";
   }else {
-  echo "error";
+  echo "ลบข้อมูลไม่สำเร็จ";
   }
 
 	$conn = "";

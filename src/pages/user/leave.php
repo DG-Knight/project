@@ -3,9 +3,9 @@
   <div class="card">
     <div class="card-body">
       <div class="page-header">
-        <h3 class="text-center text-primary">--การลา--</h3>
+        <h3 class="text-center text-primary">--ข้อมูลการลา--</h3>
       </div>
-<a href="dashboard.php?file=user/leave_form" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มการลา </a>
+<a href="dashboard.php?file=user/leave_form" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูลการลา </a>
   <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
@@ -15,7 +15,7 @@
                       <th scope="col"><b>ประภาทการลา</b></th>
                       <th scope="col"><b>วันที่เริ่มลา</b></th>
                       <th scope="col"><b>วันที่สิ้นสุด</b></th>
-                      <th scope="col"><b>จำนวนวันที่ลา</b></th>
+
                       <th scope="col"><b>จัดการ</b></th>
 
 
@@ -43,13 +43,12 @@
                           <td><?=$data->leave_type_id;?></td>
                           <td><?=$data->leave_start;?></td>
                           <td><?=$data->leave_end;?></td>
-                          <td><?=$data->total;?></td>
 
                           <td>
                             <a href="dashboard.php?file=user/leave_form_edit&id=<?=$data->leave_id?>"class="btn btn-warning">
                             <i class="fa fa-edit"></i></a>
 
-                            <a href="dashboard.php?file=user/leave_del&id=<?=$data->leave_id?>"onclick="return confirm('ยืนยันว่าลบ')"class="btn btn-danger">
+                            <a href="dashboard.php?file=user/leave_del&id=<?=$data->leave_id?>"onclick="return confirm('ยืนยันการลบ')"class="btn btn-danger">
                             <i class="fa fa-trash-o"></i></a>
                           </td>
                         </tr>

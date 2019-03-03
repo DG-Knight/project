@@ -8,11 +8,11 @@ if(isset($_GET['id'])){
 	}
   if ($query) {
     echo "<script>
-        alert('Delete Success');
+        alert('ลบข้อมูลสำเร็จแล้ว');
         window.location = 'dashboard.php?file=admin/nurse/holiday';
       </script>";
   }else {
-  echo "error";
+  echo "ลบข้อมูลไม่สำเร็จ";
   }
 
 	$conn = "";

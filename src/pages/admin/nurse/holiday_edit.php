@@ -21,7 +21,7 @@
 
   if ($result) {
     echo "<script>
-        alert('จัดการข้อมูลสำเร็จแล้ว');
+        alert('แก้ไขข้อมูลสำเร็จแล้ว');
         window.location = 'dashboard.php?file=admin/nurse/holiday';
       </script>";
   }else {

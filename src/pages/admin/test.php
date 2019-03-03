@@ -4,31 +4,39 @@
  <?php
  require '../../libs/function.php';
  CheckAuthenticationAndAuthorization();
+$del_scd_date = $_POST["year2"].'-'.$_POST["month2"];
+$conndel = PDOConnector();
+$result = $conndel->prepare( "DELETE FROM schedules WHERE DATE_FORMAT(scd_date, '%Y-%m') = :del_scd_date");
 
-//
-//  for ($i = 1; $i <= 14; $i++) {// 15 จำนวนคน
-//     for ($d = 1; $d <= 31; $d++) {// 31 วัน
-//       $scd_name = $_POST[$i.'_'.$d]; //แต่ละวัน
-//
-//       if(  $scd_name  != "-"){
-//        echo "day ".$i."_".$d.":".$scd_name ;
-//        echo "<br>";
-//       $user_id = $i;//$_SESSION['AUTHEN']['UID'];
-//       $scd_date = date('y-m').'-'.$d;//$_POST['scd_date'];
-//
-//       $conn = PDOConnector();
-//       $result = $conn->prepare( 'insert INTO schedules (user_id, scd_date, scd_name) VALUES (:user_id, :scd_date, :scd_name)');
-//
-//         $result ->execute([
-//           "user_id"=>$user_id,
-//           "scd_date"=>$scd_date,
-//           "scd_name"=>$scd_name
-//
-//         ]);
-//
-//     }
-// }
-// }
+  $result ->execute([
+
+    "del_scd_date"=>$del_scd_date,
+
+  ]);
+
+ for ($i = 1; $i <= 14; $i++) {// 15 จำนวนคน
+    for ($d = 1; $d <= $_POST["numday"]; $d++) {// 31 วัน
+      $scd_name = $_POST[$i.'_'.$d]; //แต่ละวัน
+
+      if(  $scd_name  != "-"){
+       // echo "day ".$i."_".$d.":".$scd_name ;
+       // echo "<br>";
+      $user_id = $i;//$_SESSION['AUTHEN']['UID'];
+      $scd_date = $_POST["year2"].'-'.$_POST["month2"].'-'.$d;//$_POST['scd_date'];
+
+      $conn = PDOConnector();
+      $result = $conn->prepare( 'insert INTO schedules (user_id, scd_date, scd_name) VALUES (:user_id, :scd_date, :scd_name)');
+
+        $result ->execute([
+          "user_id"=>$user_id,
+          "scd_date"=>$scd_date,
+          "scd_name"=>$scd_name
+
+        ]);
+
+    }
+}
+}
 
   ?>
  <head>
@@ -48,20 +56,19 @@
    <link rel="stylesheet" href="css/style.css">
    <!-- endinject -->
    <link rel="shortcut icon" href="images/favicon.png" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
  </head>
 
 
- <body>
-
-     <br>
-
+ <body >
 
  <form style="overflow: auto;">
 
    <?php
 
-   //echo $_POST["numday"]."DDDDDDDDDDDDDD";
+   // echo $_POST["year2"]."DDDDDDDDDDDDDD";
+   // echo $_POST["month2"]."DDDDDDDDDDDDDD";
    echo "<table border='1'cellpadding='5'>";
    echo '<tr>';//เปิดแถวใหม่ ตาราง HTML
    echo '<th>No</th>';

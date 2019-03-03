@@ -2,10 +2,10 @@
   <div class="card">
     <div class="card-body">
       <div class="page-header" >
-        <h3 class="text-center text-primary">--เพิ่มข้อมูลพยาบาล--</h3>
+        <h3 class="text-center text-primary">--เพิ่มข้อมูลส่วนตัว--</h3>
       </div>
 
-<form action="dashboard.php?file=admin/nurse/insert" method="post" id="form1"style="padding-left:100px;padding-right:100px">
+<form action="dashboard.php?file=admin/nurse/n_personals_insert" method="post" id="form1"style="padding-left:100px;padding-right:100px">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="user_name">Username</label>
@@ -39,10 +39,8 @@
       <label for="user_position">ตำแหน่ง</label>
       <select id="user_position" name="user_position" class="form-control">
         <option selected></option>
-        <option>พยาบาลชำนาญการ</option>
-        <option>พยาบาลปฏิบัติการ</option>
-        <option>พยาบาลชำนาญการพิเศษ</option>
         <option>ผู้ดูแลระบบ</option>
+
       </select>
     </div>
 
@@ -51,8 +49,6 @@
       <select id="user_level"  name="user_level"class="form-control">
         <option selected></option>
         <option>0</option>
-        <option>1</option>
-        <option>2</option>
       </select>
     </div>
 

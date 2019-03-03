@@ -13,15 +13,15 @@ $opt_names= $_POST['opt_names'];
     "nurse_chang"=>$nurse_chang,
     "date_ward"=>$date_ward,
     "opt_names"=>$opt_names
-  
+
   ]);
 if ($result) {
   echo "<script>
-      alert('จัดการข้อมูลสำเร็จแล้ว');
-
+      alert('เพิ่มข้อมูลสำเร็จแล้ว');
+window.location = 'dashboard.php?file=user/change_ward';
     </script>";
 }else {
-echo "error";
+echo "เพิ่มข้อมูลไม่สำเร็จ";
 }
 $conn = "";
 ?>

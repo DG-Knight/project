@@ -28,19 +28,25 @@
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php?file=user/inspector">
           <i class="menu-icon mdi mdi-television"></i>
-          <span class="menu-title">ผู้ตรวจการ</span>
+          <span class="menu-title">ข้อมูลผู้ตรวจการ</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php?file=user/leave">
           <i class="menu-icon mdi mdi-television"></i>
-          <span class="menu-title">การลา</span>
+          <span class="menu-title">ข้อมูลการลา</span>
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="dashboard.php?file=user/training">
           <i class="menu-icon mdi mdi-television"></i>
-          <span class="menu-title">การอบรม</span>
+          <span class="menu-title">ข้อมูลการอบรม</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="dashboard.php?file=user/change_ward">
+          <i class="menu-icon mdi mdi-sticker"></i>
+          <span class="menu-title">ข้อมูลการเปลี่ยนเวร</span>
         </a>
       </li>
       <li class="nav-item">
@@ -66,7 +72,12 @@
 
       <!--section admin menu-->
             <?php if ($_SESSION['AUTHEN']['LEVEL']==0) { ?>
-
+              <li class="nav-item">
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/n_personals">
+                  <i class="menu-icon mdi mdi-television"></i>
+                  <span class="menu-title">ข้อมูลส่วนตัว</span>
+                </a>
+              </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="collapse" href="#basic" aria-expanded="false" aria-controls="basic">
             <i class="menu-icon mdi mdi-content-copy"></i>
@@ -76,31 +87,21 @@
           <div class="collapse" id="basic">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" href="dashboard.php?file=admin/nurse/index">ข้อมูลพยาบาล/ผู้ช่วย</a>
+                <a class="nav-link" href="dashboard.php?file=admin/nurse/index">ข้อมูลพยาบาล</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="dashboard.php?file=admin/nurse/work_exp_type">ข้อมูลประเภทอายุงานของพยาบาล</a>
-              </li>
+
               <li class="nav-item">
                 <a class="nav-link" href="dashboard.php?file=admin/nurse/holiday">ข้อมูลวันหยุด</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="dashboard.php?file=admin/nurse/operating _time">ข้อมูลช่วงระยะเวลาการเข้าเวร</a>
-              </li>
+
             </ul>
           </div>
         </li>
 
       <li class="nav-item">
-        <a class="nav-link" target ="_blank" href= "admin/schedule.php">
+        <a class="nav-link" target ="_blank" href="dashboard.php?file=admin/nurse/schedule_yesr">
           <i class="menu-icon mdi mdi-table"></i>
           <span class="menu-title">ข้อมูลตารางปฏิบัติงาน</span>
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="dashboard.php?file=admin/nurse/change_ward">
-          <i class="menu-icon mdi mdi-sticker"></i>
-          <span class="menu-title">ข้อมูลการเปลี่ยนเวร</span>
         </a>
       </li>
       <li class="nav-item">
@@ -123,6 +124,9 @@
             <li class="nav-item">
               <a class="nav-link"target ="_blank"href="admin/report_holiday.php"> วันหยุด </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link"href="#"> การเปลี่ยนเวร </a>
+            </li>
 
           </ul>
         </div>
@@ -132,9 +136,27 @@
 <!--section master menu-->
 <?php if ($_SESSION['AUTHEN']['LEVEL']==2) { ?>
   <li class="nav-item">
+    <a class="nav-link" href="dashboard.php?file=master/m_personals">
+      <i class="menu-icon mdi mdi-television"></i>
+      <span class="menu-title">ข้อมูลส่วนตัว</span>
+    </a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="dashboard.php?file=admin/nurse/index">
       <i class="menu-icon mdi mdi-television"></i>
       <span class="menu-title">ข้อมูลพยาบาล</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="dashboard.php?file=user/leave">
+      <i class="menu-icon mdi mdi-television"></i>
+      <span class="menu-title">ข้อมูลการลา</span>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="dashboard.php?file=user/training">
+      <i class="menu-icon mdi mdi-television"></i>
+      <span class="menu-title">ข้อมูลการอบรม</span>
     </a>
   </li>
 <li class="nav-item">

@@ -6,16 +6,16 @@
       </div>
 
 
-        <form action="dashboard.php?file=admin/nurse/change_ward_insert" method="post"style="padding-left:250px;padding-right:100px">
+        <form action="dashboard.php?file=user/change_ward_insert" method="post"style="padding-left:250px;padding-right:100px">
           <div class="form-row">
             <div class="form-group col-md-5">
               <label for="person_chang">พยาบาลที่ขอเปลี่ยนเวร</label>
-              <input type="text" id="person_chang" name="person_chang" class="form-control">
+              <input type="text" id="person_chang" name="person_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
             </div>
 
             <div class="form-group col-md-5">
               <label for="nurse_chang">พยาบาลที่เปลี่ยนเวร</label>
-              <input type="text"id="nurse_chang" name="nurse_chang" class="form-control">
+              <input type="text"id="nurse_chang" name="nurse_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
 
             </div>
 
@@ -34,9 +34,9 @@
             </select>
           </div>
         </div>
-        
-        <button type="submit" class="btn btn-primary">submit</button>
-        <button type="reset" class="btn btn-primary">reset</button>
+
+        <button type="submit" class="btn btn-primary">บันทึก</button>
+        <button type="reset" class="btn btn-primary">รีเซ็ต</button>
 
         </form>
 

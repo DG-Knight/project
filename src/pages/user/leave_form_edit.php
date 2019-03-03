@@ -10,7 +10,7 @@
       $row=$query -> fetch(PDO::FETCH_OBJ);
       ?>
        <div class="page-header" >
-        <h3 class="text-center text-primary">--แก้ไขการลา--</h3>
+        <h3 class="text-center text-primary">--แก้ไขข้อมูลการลา--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/leave_edit" method="post" style="padding-left:250px;padding-right:100px">
@@ -38,16 +38,11 @@
       <input type="date"  name="leave_end" value="<?=$row->leave_end?>">
     </div>
   </div>
-    <div class="form-group row">
-    <label for="colFormLabelss" class="col-md-3">จำนวนวันที่ลา</label>
-    <div class="col-md-2">
-      <input type="text" class="form-control form-control" id="total" placeholder="*****" name="total" value="<?=$row->total?>">
-    </div>
-    </div>
+
 
     <input type="hidden" name="leave_id" value="<?=$row->leave_id?>">
-    <button type="submit" class="btn btn-primary">submit</button>
-    <button type="reset" class="btn btn-primary">reset</button>
+    <button type="submit" class="btn btn-primary">บันทึก</button>
+    <button type="reset" class="btn btn-primary">รีเซ็ต</button>
 </form>
 
     </div>

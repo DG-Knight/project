@@ -35,21 +35,93 @@ $(document).ready(function(){
     //alert("ff");
 
     $("#myval2").text( $(this).attr('name')+$(this).val());
-    if($(this).attr('name').substring(2, 3) != 1){
-      if($(this).val() =="ช"){//ด กับ ช ไม่ได้
-       if(document.getElementsByName($(this).attr('name').substring(0, 2)+($(this).attr('name').substring(2, 3)-1))[0].value == "ด"){
+    if($(this).attr('name').substring(2, 4) > 9){
+try {
+  if($(this).val() =="ช"){//ด กับ ช ไม่ได้
+   if(document.getElementsByName($(this).attr('name').substring(0, 2)+($(this).attr('name').substring(2, 4)-1))[0].value == "ด"){
+    alert('ไม่ถูกต้องตามเงื่อนไข');
+   }else {
+    }
+  }else if($(this).val() =="ด"){//ด กับ ช ไม่ได้
+     if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 4))+1)))[0].value == "ช"){
+      alert('ไม่ถูกต้องตามเงื่อนไข');
+     }else  {
+       if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 4))+1)))[0].value == "ด"){
         alert('ไม่ถูกต้องตามเงื่อนไข');
-       }else {
-        }
-      }else if($(this).val() =="ด"){//ด กับ ช ไม่ได้
-         if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 3))+1)))[0].value == "ช"){
+       }else  {
+         if(document.getElementsByName($(this).attr('name').substring(0, 2)+($(this).attr('name').substring(2, 4)-1))[0].value == "ด"){
           alert('ไม่ถูกต้องตามเงื่อนไข');
-         }else  {
+         }else {
           }
         }
+      }
+    }
+} catch (e) {
+}
 
-    }else {
+    }
+  else  if($(this).attr('name').substring(2, 3) != 1){
 
+      try {
+        if($(this).val() =="ช"){//ด กับ ช ไม่ได้ 1_
+         if(document.getElementsByName($(this).attr('name').substring(0, 2)+($(this).attr('name').substring(2, 3)-1))[0].value == "ด"){
+          alert('ไม่ถูกต้องตามเงื่อนไข');
+         }else {
+          }
+        }else if($(this).val() =="ด"){//ด กับ ช ไม่ได้
+           if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 3))+1)))[0].value == "ช"){
+            alert('ไม่ถูกต้องตามเงื่อนไข');
+           }else  {
+
+             if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 3))+1)))[0].value == "ด"){
+              alert('ไม่ถูกต้องตามเงื่อนไข');
+             }else if(document.getElementsByName($(this).attr('name').substring(0, 2)+($(this).attr('name').substring(2, 3)-1))[0].value == "ด"){
+              alert('ไม่ถูกต้องตามเงื่อนไข');
+             }
+            }
+          }
+      } catch (e) {
+
+        if($(this).val() =="ช"){//ด กับ ช ไม่ได้ 1_
+         if(document.getElementsByName($(this).attr('name').substring(0, 3)+($(this).attr('name').substring(3, 5)-1))[0].value == "ด"){
+          alert('ไม่ถูกต้องตามเงื่อนไข');
+         }else {
+          }
+        }else if($(this).val() =="ด"){//ด กับ ช ไม่ได้
+           if(document.getElementsByName($(this).attr('name').substring(0, 3)+((parseInt($(this).attr('name').substring(3, 5))+1)))[0].value == "ช"){
+            alert('ไม่ถูกต้องตามเงื่อนไข');
+           }else  {
+             if(document.getElementsByName($(this).attr('name').substring(0, 3)+((parseInt($(this).attr('name').substring(3, 5))+1)))[0].value == "ด"){
+              alert('ไม่ถูกต้องตามเงื่อนไข');
+             }else  {
+               if(document.getElementsByName($(this).attr('name').substring(0, 3)+($(this).attr('name').substring(3, 5)-1))[0].value == "ด"){
+                alert('ไม่ถูกต้องตามเงื่อนไข');
+               }else {
+                }
+              }
+            }
+          }
+      }
+
+    } else
+
+    {try {
+
+        if($(this).val() =="ด"){//ด กับ ช ไม่ได้
+           if(document.getElementsByName($(this).attr('name').substring(0, 2)+((parseInt($(this).attr('name').substring(2, 3))+1)))[0].value == "ช"){
+            alert('ไม่ถูกต้องตามเงื่อนไข');
+           }else  {
+            }
+          }
+} catch (e) {
+
+        if($(this).val() =="ด"){//ด กับ ช ไม่ได้
+           if(document.getElementsByName($(this).attr('name').substring(0, 3)+((parseInt($(this).attr('name').substring(3, 4))+1)))[0].value == "ช"){
+            alert('ไม่ถูกต้องตามเงื่อนไข');
+           }else  {
+            }
+          }
+}
     }
 //console.log('test',$(this).attr('name').substring(2, 3));//    .substring(2, 3) || []_1
 //console.log('test2',document.getElementsByName($(this).attr('name'))[0].name);//value  name
@@ -151,7 +223,7 @@ for(i=1;i<=14;i++){
   <form  method="POST" style="overflow:auto;" action="test.php" >
 <div class="button-center"style="padding-left:10px;">
 
-  <input type="submit" name="submit" value="submit" ></div>
+  <input type="submit" name="submit" value="บันทึก"></div>
   <?php
 
   //รับค่าตัวแปรที่ส่งมาจากแบบฟอร์ม HTML
@@ -191,6 +263,8 @@ for(i=1;i<=14;i++){
   $timeDate = strtotime($year.'-'.$month."-01");  //เปลี่ยนวันที่เป็น timestamp
   $lastDay = date("t", $timeDate);   				//จำนวนวันของเดือน
   echo '<input type="hidden" name="numday" id="numday" value="'.$lastDay.'">';
+  echo '<input type="hidden" name="year2" id="year2" value="'.$year.'">';
+  echo '<input type="hidden" name="month2" id="month2" value="'.$month.'">';
 
   //สร้างหัวตารางตั้งแต่วันที่ 1 ถึงวันที่สุดท้ายของดือน
   $strStartDate = $year."-".$month."-"."01" ;
@@ -261,22 +335,63 @@ for(i=1;i<=14;i++){
 
         //$data->user_id."_".$i = 'ช';
         $nametable =$data->user_id."_".$i;
+        /*Load Database*/
 
+        //echo "SELECT * FROM `schedules` WHERE scd_date='".$year."-".$month."-".$i."' and user_id='".$data->user_id."'";
+        $result = $conn->prepare("SELECT * FROM `schedules` WHERE scd_date='".$year."-".$month."-".$i."' and user_id='".$data->user_id."'");
+        $result ->execute();
+        if ($result->rowCount()>0) {
+          while ($rs = $result -> fetch(PDO::FETCH_OBJ)) {
+            $d = substr("0".$i,-2);
+            echo "<td>";
+            echo "<select style='font-size:9pt;'name='".$nametable."' >";
+            if ($rs->scd_name == '-')
+              echo "<option value='-' selected>-";
+            else
+              echo "<option value='-'>-";
+            if ($rs->scd_name == 'ช')
+              echo "<option value='ช' selected>ช";
+            else
+              echo "<option value='ช'>ช";
+            if ($rs->scd_name == 'บ')
+              echo "<option value='บ' selected>บ";
+            else
+              echo "<option value='บ'>บ ";
+            if ($rs->scd_name == 'ด')
+              echo "<option value='ด' selected>ด";
+            else
+              echo "<option value='ด'>ด";
+            if ($rs->scd_name == '0')
+              echo "<option value='0' selected>0";
+            else
+              echo "<option value='0'>0";
+            if ($rs->scd_name == 'V')
+              echo "<option value='V' selected>V";
+            else
+              echo "<option value='V'>V";
+            if ($rs->scd_name == 'S2')
+              echo "<option value='S2' selected>S2";
+            else
+              echo "<option value='S2'>S2";
+            echo "</select>";
+            echo "</td>";
+          }
+        } else {
 
-        // }
-        $d = substr("0".$i,-2);
-        echo "<td>";
-        echo "<select style='font-size:9pt;'name='".$nametable."' >";
-        echo "<option value='-'>-";
-        echo "<option value='ช'>ช";
-        echo "<option value='บ'>บ ";
-        echo "<option value='ด'>ด";
-        echo "<option value='0'>0";
-        echo "<option value='V'>V";
-        echo "<option value='s2'>s2";
-        echo "</select>";
-        echo "</td>";
+            $d = substr("0".$i,-2);
+            echo "<td>";
+            echo "<select style='font-size:9pt;'name='".$nametable."' >";
+            echo "<option value='-'>-";
+            echo "<option value='ช'>ช";
+            echo "<option value='บ'>บ ";
+            echo "<option value='ด'>ด";
+            echo "<option value='0'>0";
+            echo "<option value='V'>V";
+            echo "<option value='s2'>s2";
+            echo "</select>";
+            echo "</td>";
 
+      }
       }
       ?>
     <!--  <td></td>

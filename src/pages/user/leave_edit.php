@@ -5,7 +5,7 @@
   $leave_type_id = $_POST['leave_type_id'];
   $leave_start = $_POST['leave_start'];
   $leave_end = $_POST['leave_end'];
-  $total = $_POST['total'];
+
 
   $conn = PDOConnector();
 
@@ -13,21 +13,20 @@
   //echo "UPDATE";
   $result = $conn->prepare("UPDATE leaves SET leave_type_id = :leave_type_id,
                                                      leave_start = :leave_start,
-                                                     leave_end = :leave_end,
-                                                     total = :total
+                                                     leave_end = :leave_end
                                                   WHERE leaves.leave_id = :leave_id ;");
   $result ->execute(["leave_id"=>$leave_id,
                     // "user_id"=>$user_id,
                      "leave_type_id"=>$leave_type_id,
                      "leave_start"=>$leave_start,
-                     "leave_end"=>$leave_end,
-                     "total"=>$total
+                     "leave_end"=>$leave_end
+
 
                    ]);
 
   if ($result) {
     echo "<script>
-        alert('จัดการข้อมูลสำเร็จแล้ว');
+        alert('แก้ไขข้อมูลสำเร็จแล้ว');
         window.location = 'dashboard.php?file=user/leave';
       </script>";
   }else {

@@ -25,11 +25,11 @@ $user_level = $_POST['user_level'];
   ]);
 if ($result) {
   echo "<script>
-      alert('จัดการข้อมูลสำเร็จแล้ว');
+      alert('เพิ่มข้อมูลสำเร็จแล้ว');
       window.location = 'dashboard.php?file=admin/nurse/index';
     </script>";
 }else {
-echo "error";
+echo "เพิ่มข้อมูลไม่สำเร็จ";
 }
 $conn = "";
 ?>

@@ -35,8 +35,8 @@
           </div>
 
           <input type="hidden" name="holiday_id" value="<?=$row->holiday_id?>">
-          <button type="submit" class="btn btn-primary">submit</button>
-          <button type="reset" class="btn btn-primary">reset</button>
+          <button type="submit" class="btn btn-primary">บันทึก</button>
+          <button type="reset" class="btn btn-primary">รีเซ็ต</button>
         </form>
 
       </div>

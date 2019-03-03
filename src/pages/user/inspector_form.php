@@ -2,40 +2,36 @@
   <div class="card">
     <div class="card-body">
        <div class="page-header" >
-        <h3 class="text-center text-primary">--เพิ่มผู้ตรวจการ--</h3>
+        <h3 class="text-center text-primary">--เพิ่มข้อมูลผู้ตรวจการ--</h3>
       </div>
       <br>
       <form action="dashboard.php?file=user/inspector_insert" method="post" id="form"style="padding-left:250px;padding-right:100px">
         <div class="form-group row">
-          <label for="inspector_start"  class="col-md-4">วันที่เริ่มการเป็นผู้ตรวจการ</label>
+          <label for="inspector_start"  class="col-md-4">วันที่เป็นผู้ตรวจการ</label>
             <div class="col-md-5">
-              <input type="date"  name="inspector_start">
+              <input type="date"  name="inspector_start" id="inspector_start">
             </div>
           </div>
-
-          <div class="form-group row">
-            <label for="inspector_end"  class="col-md-4">วันที่สิ้นสุดการเป็นผู้ตรวจการ</label>
-              <div class="col-md-5">
-                <input type="date"  name="inspector_end">
-              </div>
-            </div>
-
-            <div class="form-group row">
-            <label for="inspector_total" class="col-md-4">จำนวนวันที่เป็นผู้ตรวจการ</label>
+          <ul class="list-inline" style="padding-left:205px">
+            <h6 class="text-danger list-inline-item">*S1 = ผู้ตรวจการเวรเช้า</h6>
+            <h6 class="text-danger list-inline-item">*S2 = ผู้ตรวจการเวรบ่าย/ดึก</h6>
+          </ul>
+            <div class="form-group row" >
+            <label for="inspector_details" class="col-md-4">ช่วงเวลาที่เป็นผู้ตรวจการ</label>
             <div class="col-md-2">
-              <input type="text" class="form-control form-control-ss" id="inspector_total" name="inspector_total"placeholder="******">
-            </div>
-            </div>
-              <div class="form-group row">
-                <label for="inspector_details" class="col-md-4">รายละเอียดผู้ตรวจการ</label>
-                <div class="col-md-6">
-                <textarea class="form-control" id="inspector_details" rows="3" name="inspector_details"></textarea>
-              </div>
-              </div>
+              <select type="text" class="form-control form-control-ss" id="inspector_details" name="inspector_details">
+                <option>S1</option>
+                <option>S2</option>
 
-              <button type="submit" class="btn btn-primary">submit</button>
-              <button type="reset" class="btn btn-primary">reset</button>
+              </select>
+            </div>
+            </div>
+
+
+              <button type="submit" class="btn btn-primary">บันทึก</button>
+              <button type="reset" class="btn btn-primary">รีเซ็ต</button>
 </form>
+
 </div>
 </div>
 </div>

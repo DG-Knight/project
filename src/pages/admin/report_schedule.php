@@ -40,8 +40,8 @@ function Footer(){
 $pdf = new PDF('P','mm','A4');
 $pdf->AddPage();
 $pdf->Ln(5);
-$pdf->AddFont('THSarabunNew','','THSarabunNew.php');
-$pdf->SetFont('THSarabunNew','',16);
+$pdf->AddFont('THSarabunNew_b','','THSarabunNew_b.php');
+$pdf->SetFont('THSarabunNew_b','',16);
 $pdf->Cell(175,4,iconv('UTF-8', 'cp874', 'สรุปรายงานวันหยุด'),0,1,'C');
 $pdf->Ln(5);
 $pdf->Cell(20);

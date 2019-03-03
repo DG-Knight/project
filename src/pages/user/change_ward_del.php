@@ -8,11 +8,11 @@ if(isset($_GET['id'])){
 	}
   if ($query) {
     echo "<script>
-        alert('Delete Success');
-        window.location = 'dashboard.php?file=admin/nurse/change_ward';
+        alert('ลบข้อมูลสำเร็จเเล้ว');
+        window.location = 'dashboard.php?file=user/change_ward';
       </script>";
   }else {
-  echo "error";
+  echo "ลบข้อมูลไม่สำเร็จ";
   }
 
 	$conn = "";
