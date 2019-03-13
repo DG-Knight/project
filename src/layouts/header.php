@@ -9,24 +9,7 @@
         </a>
       </div>
 
-      <!--
-      <div class="navbar-menu-wrapper d-flex align-items-center">
-        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Schedule
-              <span class="badge badge-primary ml-1">New</span>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a href="#" class="nav-link">
-              <i class="mdi mdi-elevation-rise"></i>Reports</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link"
-              <i class="mdi mdi-bookmark-plus-outline"></i>Score</a>
-          </li>
-        </ul>
--->
+
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
               <span class="alert alert-primary">สวัสดี, <?php echo $_SESSION['AUTHEN']['FNAME']."&nbsp".$_SESSION['AUTHEN']['LNAME']?> !</span>
@@ -46,9 +29,9 @@
                   </div>
                 </div>
               </a>
-              <a class="dropdown-item">
+              <!-- <a class="dropdown-item">
                 Change Password
-              </a>
+              </a> -->
               <a href="logout.php" class="dropdown-item">
                 Sign Out
               </a>
