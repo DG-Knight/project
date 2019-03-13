@@ -5,7 +5,7 @@
           <img src="../../assets/images/logo-mini.svg" alt="logo" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="index.html">
-          <img src="../../assets/images/logo-mini.svg" />
+          <img src="../../assets/images/logo-mini.svg" >
         </a>
       </div>
 

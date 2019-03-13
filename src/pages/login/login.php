@@ -2,14 +2,15 @@
 require '../../libs/function.php';
 if(isset($_POST['login'])){  // check ปุ่ม login
   $password = $_POST['password'];
-//  $password = md5($user_password);//ถอดรหัสpassword
+
+
   $username = $_POST['username'];
   $result = Authentication($username,$password);
   if($result){
     header('location: ../dashboard.php');
     die();
   }else{
-    
+
     # ล็อกอินไม่ผ่าน
     echo "<script>
         alert('ล็อกอินไม่ผ่าน !');

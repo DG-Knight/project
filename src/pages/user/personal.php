@@ -27,6 +27,7 @@
                       $query = $conn->prepare($sql);
                       $query->execute();
                          if ($query->rowCount()>0) {
+                          
                            $i = 1;
                            while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
                       ?>

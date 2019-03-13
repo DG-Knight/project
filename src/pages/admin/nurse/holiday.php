@@ -3,7 +3,7 @@
   <div class="card">
     <div class="card-body">
       <div class="page-header">
-        <h3 class="text-center text-primary">--วันหยุด--</h3>
+        <h3 class="text-center text-primary">--วันหยุดประจำปี--</h3>
       </div>
       <a href="dashboard.php?file=admin/nurse/holiday_form_insert" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูลวันหยุด </a>
   <div class="table-responsive">
@@ -11,7 +11,7 @@
                     <thead>
                       <tr>
                       <th scope="col"><b>#</b></th>
-                      <th scope="col"><b>ปี</b></th>
+                      <!-- <th scope="col"><b>ปี</b></th> -->
                       <th scope="col"><b>วันหยุด</b></th>
                       <th scope="col"><b>ชื่อวันหยุด</b></th>
                       <th scope="col"><b>จัดการ</b></th>
@@ -32,7 +32,7 @@
                         ?>
                         <tr>
                           <td><?=$i++ ?></td>
-                          <td><?=$data->fisyear;?></td>
+                        
                           <td><?=$data->publicholiday;?></td>
                           <td><?=$data->description;?></td>
                           <td>

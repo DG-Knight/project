@@ -1,5 +1,5 @@
 
-    <form method="POST" style="padding-left:50px;" action="../schedule.php">
+    <form method="POST" style="padding-left:50px;" action="admin/schedule.php">
 
       <table>
         <tr>
@@ -40,7 +40,7 @@
           </td>
 
           <td><input type="submit" value="ค้นหา" id="myval" name="" ></td>
-         <td><input type="submit" name="" value="save"><label id="myval2">sss</label></td>
+         <!-- <td><input type="submit" name="" value="save"><label id="myval2">sss</label></td> -->
 
         </tr>
 

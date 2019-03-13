@@ -15,14 +15,17 @@ define("DB_PWD", "574234059");
 //define("DB_SER", "");
 //define("DB_NAME", "");
 //define("DB_USR", "");
-//define("DB_PWD", "");
+// define("DB_PWD", "");
 function PDOConnector(){
 	  try {
 	    $conn = new PDO('mysql:host='.DB_SER.';dbname='.DB_NAME.';charset=utf8', DB_USR, DB_PWD);
 		  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 	    return $conn;
+
 	  }catch(PDOException $e){ return null;}
+
 }
+
 // Authentication
 function Authentication($username,$password){
 

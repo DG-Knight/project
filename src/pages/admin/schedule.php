@@ -202,7 +202,7 @@ for(i=1;i<=14;i++){
   			</td>
 
   			<td><input type="submit" value="ค้นหา" id="myval" name=""></td>
-       <td><input type="submit" name="" value="save"><label id="myval2">sss</label></td>
+       <!-- <td><input type="submit" name="" value="save"><label id="myval2">sss</label></td> -->
 
   		</tr>
 
@@ -215,7 +215,8 @@ for(i=1;i<=14;i++){
     <h6 class="text-danger list-inline-item">*บ = บ่าย</h6>
     <h6 class="text-danger list-inline-item">*ด = ดึก</h6>
     <h6 class="text-danger list-inline-item">*v = ลาพักร้อน</h6>
-    <h6 class="text-danger list-inline-item">*s2 = ผู้ตรวจการ</h6>
+    <h6 class="text-danger list-inline-item">*S1 = ผู้ตรวจการเวรเช้า</h6>
+    <h6 class="text-danger list-inline-item">*S2 = ผู้ตรวจการเวรบ่าย/ดึก</h6>
   </ul>
   </form>
 
@@ -235,7 +236,7 @@ for(i=1;i<=14;i++){
   echo "<br><table border='1'cellpadding='2' >";
   echo '<tr>';//เปิดแถวใหม่ ตาราง HTML
   echo '<th>No</th>';
-  echo '<th > ชื่อ - นามสกุล </th>';
+  echo '<th> ชื่อ-นามสกุล </th>';
 
 
 
@@ -326,8 +327,8 @@ for(i=1;i<=14;i++){
   ?>
   <tr>
     <!--ชื่อ-นามสกุล-->
-      <td><?=$j++ ?></td>
-      <td  widht="100%"  align="center"><?=$data->user_fname;?>&nbsp<?=$data->user_lname;?></td>
+      <td align="center"><?=$j++ ?></td>
+      <td align="center"><?=$data->user_fname;?>&nbsp<?=$data->user_lname;?></td>
 
 
       <?php
@@ -372,7 +373,11 @@ for(i=1;i<=14;i++){
             if ($rs->scd_name == 'S2')
               echo "<option value='S2' selected>S2";
             else
-              echo "<option value='S2'>S2";
+            echo "<option value='S2'>S2";
+          if ($rs->scd_name == 'S1')
+            echo "<option value='S1' selected>S1";
+          else
+              echo "<option value='S1'>S1";
             echo "</select>";
             echo "</td>";
           }
@@ -387,19 +392,14 @@ for(i=1;i<=14;i++){
             echo "<option value='ด'>ด";
             echo "<option value='0'>0";
             echo "<option value='V'>V";
-            echo "<option value='s2'>s2";
+            echo "<option value='S1'>S1";
+            echo "<option value='S2'>S2";
             echo "</select>";
             echo "</td>";
 
       }
       }
       ?>
-    <!--  <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
--->
 
   </tr>
 <?php }} ?>
@@ -437,7 +437,7 @@ for(i=1;i<=14;i++){
 <td><label id="26_c">ช = 0</label></td>
 <td><label id="27_c">ช = 0</label></td>
 <td><label id="28_c">ช = 0</label></td>
-      <!-- <td >
+      <td >
         <label id="29_c">ช = 0</label>
       </td>
       <td>
@@ -445,7 +445,7 @@ for(i=1;i<=14;i++){
       </td>
       <td>
         <label id="31_c">ช = 0</label>
-      </td> -->
+      </td>
 </tr>
 
 <!--  -บ------------->
@@ -480,7 +480,7 @@ for(i=1;i<=14;i++){
 <td><label id="26_b">บ = 0</label></td>
 <td><label id="27_b">บ = 0</label></td>
 <td><label id="28_b">บ = 0</label></td>
-                      <!-- <td>
+                      <td>
                         <label id="29_b">บ = 0</label>
                       </td>
                          <td>
@@ -488,7 +488,7 @@ for(i=1;i<=14;i++){
                         </td>
                         <td>
                          <label id="31_b">บ = 0</label>
-                       </td> -->
+                       </td>
 </tr>
 
 <!--  -///ด------------->
@@ -523,9 +523,9 @@ for(i=1;i<=14;i++){
 <td><label id="26_a">ด = 0</label></td>
 <td><label id="27_a">ด = 0</label></td>
 <td><label id="28_a">ด = 0</label></td>
-<!-- <td><label id="29_a">ด = 0</label></td>
+<td><label id="29_a">ด = 0</label></td>
 <td><label id="30_a">ด = 0</label></td>
-<td><label id="31_a">ด = 0</label></td> -->
+<td><label id="31_a">ด = 0</label></td>
 </tr>
 
 </table >

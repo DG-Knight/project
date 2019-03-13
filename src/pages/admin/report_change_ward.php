@@ -14,10 +14,11 @@
 
   <?php
 
-      $year=date('Y');
+    $year=date('Y');
+    $month=date('m');
 
       $conn = PDOConnector();
-      $sql = "SELECT * FROM holiday  WHERE DATE_FORMAT(publicholiday, '%Y') = '".$year."' ORDER BY publicholiday ASC ";//เรียกได้เฉพาะปีที่กำหนด
+      $sql = "SELECT * FROM change_ward WHERE DATE_FORMAT(date_ward, '%Y-%m') = '".$year."-".$month."' ORDER BY date_ward ASC";//
       $query = $conn->prepare($sql);
       $query->execute();
          if ($query->rowCount()>0) {
@@ -27,9 +28,10 @@
 
                   <tr style="border:1px solid #000;">
                   <td style="border-right:1px solid #000;"  >'.$i.'</td>
-                  <td style="border-right:1px solid #000;" >'.$data->fisyear.'</td>
-                  <td style="border-right:1px solid #000;"  >'.$data->publicholiday.'</td>
-                  <td style="border-right:1px solid #000;"  >'.$data->description.'</td>
+                  <td style="border-right:1px solid #000;" >'.$data->person_chang.'</td>
+                  <td style="border-right:1px solid #000;"  >'.$data->nurse_chang.'</td>
+                  <td style="border-right:1px solid #000;"  >'.$data->date_ward.'</td>
+                  <td style="border-right:1px solid #000;"  >'.$data->opt_names.'</td>
 
               </tr>
               ';
@@ -50,10 +52,7 @@
 
 
            </table>";
-
   $head = '
-
-
         <style>
         .container{
 
@@ -77,23 +76,23 @@
 
         <div class="container">
 
-            <p>รายงานวันหยุดประจำปี</p>
+            <p>รายงานการเปลี่ยนเวร</p>
 
-  <a>*แผนกหอผู้ป่วยพิเศษสูติกรรม โรงพยาบาลสงขลานครินทร์</a>
-  <br>
+              <a>*แผนกหอผู้ป่วยพิเศษสูติกรรม โรงพยาบาลสงขลานครินทร์</a>
+              <br>
         <table id="bg-table" width="100%" style="border-collapse:collapse;">
             <tr style="border:1px solid #000;padding:4px;">
                 <td  style="border-right:1px solid #000;"width="5%">ลำดับ</td>
-                <td  style="border-right:1px solid #000;"width="5%">ปี</td>
-                <td  style="border-right:1px solid #000;"width="10%">วันหยุด</td>
-                <td  style="border-right:1px solid #000;"width="10%">ชื่อวันหยุด</td>
+                <td  style="border-right:1px solid #000;"width="15%">พยาบาลที่ขอเปลี่ยนเวร</td>
+                <td  style="border-right:1px solid #000;"width="15%">พยาบาลที่เปลี่ยนเวร</td>
+                <td  style="border-right:1px solid #000;"width="10%">วันที่เปลี่ยนเวร</td>
+                <td  style="border-right:1px solid #000;"width="10%">เวรที่ปลี่ยน</td>
 
             </tr>
 
             </thead>
 
             <tbody>
-
         </div>
             ';
 

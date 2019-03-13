@@ -59,12 +59,12 @@
           <ul class="nav flex-column sub-menu">
 
             <li class="nav-item">
-              <a class="nav-link" href="pages/ui-features/typography.html">การเข้าเวรของตนเอง</a>
+              <a class="nav-link" target ="_blank"href="admin/report_schedule_user.php">การเข้าเวรของตนเอง</a>
             </li>
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="pages/ui-features/typography.html">วันหยุดของตนเอง</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </li>
@@ -113,7 +113,7 @@
         <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item">
-              <a class="nav-link" href="#"> การเข้าเวรของแต่ละเดือน </a>
+              <a class="nav-link" target ="_blank" href="admin/report_schedule_a.php"> การเข้าเวรของแต่ละเดือน </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" target ="_blank" href="admin/report_leave.php"> การลาแต่ละเดือน </a>
@@ -125,7 +125,7 @@
               <a class="nav-link"target ="_blank"href="admin/report_holiday.php"> วันหยุด </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"href="#"> การเปลี่ยนเวร </a>
+              <a class="nav-link" target ="_blank"href="admin/report_change_ward.php"> การเปลี่ยนเวร </a>
             </li>
 
           </ul>
@@ -168,17 +168,20 @@
 <div class="collapse" id="basic0">
 <ul class="nav flex-column sub-menu">
   <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/buttons.html">การเข้าเวรของแต่ละเดือน</a>
+    <a class="nav-link" target ="_blank" href="admin/report_schedule_a.php">การเข้าเวรของแต่ละเดือน</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/typography.html">การลาแต่ละเดือน</a>
+    <a class="nav-link" target ="_blank" href="admin/report_schedule_user.php">การเข้าเวรของตนเอง</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/typography.html">การอบรมแต่ละเดือน</a>
+    <a class="nav-link" target ="_blank" href="admin/report_leave.php">การลาแต่ละเดือน</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" target ="_blank" href="admin/report_training.php">การอบรมแต่ละเดือน</a>
   </li>
 
   <li class="nav-item">
-    <a class="nav-link" href="pages/ui-features/typography.html">วันหยุด</a>
+    <a class="nav-link" target ="_blank" href="admin/report_holiday.php">วันหยุด</a>
 
 </ul>
 </div>

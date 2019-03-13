@@ -13,61 +13,91 @@ ob_start();
 ?>
 <?php
 
+    $year=date('Y');
+    $month=date('m');
     $conn = PDOConnector();
-    $sql = "SELECT * FROM training INNER JOIN users ON training.user_id=users.user_id";
+    $sql = "SELECT * FROM training INNER JOIN users ON training.user_id=users.user_id WHERE DATE_FORMAT(training.training_start, '%Y-%m') = '".$year."-".$month."' OR DATE_FORMAT(training.training_end, '%Y-%m') = '".$year."-".$month."'";
     $query = $conn->prepare($sql);
     $query->execute();
        if ($query->rowCount()>0) {
          $i = 1;
          while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
             $content .= '<tr style="border:1px solid #000;">
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$i.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;" >'.$data->user_fname.' '.$data->user_lname.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$data->training_start.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$data->training_end.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$data->training_total.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$data->training_location.'</td>
-                <td style="border-right:1px solid #000;padding:3px;text-align:center;"  >'.$data->training_details.'</td>
+                <td style="border-right:1px solid #000;"  >'.$i.'</td>
+                <td style="border-right:1px solid #000;" >'.$data->user_fname.' '.$data->user_lname.'</td>
+                <td style="border-right:1px solid #000;"  >'.$data->training_start.'</td>
+                <td style="border-right:1px solid #000;"  >'.$data->training_end.'</td>
+                <td style="border-right:1px solid #000;"  >'.$data->training_details.'</td>
 
             </tr>';
             $i++;
         }
     }
 
+    $footer = "<table name='footer' width=\"1000\">
 
-$mpdf = new mPDF();
+                <tr>
+                <td style='font-size: 16px;' align=\"right\">วันที่พิมพ์ : {DATE d-m-Y}</td>
+                </tr>
+               <tr>
+               <td style='font-size: 16px;' align=\"center\">Page{PAGENO}</td>
+               </tr>
+
+
+             </table>";
+
 
 $head = '
-<style>
-    body{
-        font-family: "Garuda";//เรียกใช้font Garuda สำหรับแสดงผล ภาษาไทย
+
+    <style>
+    .container{
+
     }
-</style>
+    td{
+      font-family: "THSarabunNew";
+      text-align:center;
+      font-size: 11pt;
+      padding:5px;
+    }
 
-<h2 style="text-align:center">รายงานการอบรม</h2>
+    p{
+      font-family: "THSarabunNew";
+        text-align: center ;
+        font-size: 20pt;
+    }
+    </style>
 
-<table id="bg-table" width="100%" style="border-collapse: collapse;font-size:12pt;margin-top:8px;">
-    <tr style="border:1px solid #000;padding:4px;">
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"   width="10%">ลำดับ</td>
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="30%">รายชื่อ-นามสกุล</td>
-        <td  width="15%" style="border-right:1px solid #000;padding:4px;text-align:center;">วันที่เริ่มอบรม</td>
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="20%">วันที่สิ้นสุดอบรม</td>
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="15%">จำนวนวันที่อบรม</td>
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="25%">สถานที่อบรม</td>
-        <td  style="border-right:1px solid #000;padding:4px;text-align:center;"  width="25%">รายละเอียดการอบรม</td>
+      <img src="../../../assets/images/logo1.png" style="width:13%; padding-left:300px;" >
+
+    <div class="container">
+
+<p>รายงานการอบรม</p>
+<a>*แผนกหอผู้ป่วยพิเศษสูติกรรม โรงพยาบาลสงขลานครินทร์</a>
+<table id="bg-table" width="100%" style="border-collapse:collapse;">
+    <tr style="border:1px solid #000;">
+        <td  style="border-right:1px solid #000;" width="10%">ลำดับ</td>
+        <td  style="border-right:1px solid #000;" width="20%">รายชื่อ-นามสกุล</td>
+        <td  style="border-right:1px solid #000;" width="15%">วันที่เริ่มอบรม</td>
+        <td  style="border-right:1px solid #000;" width="20%">วันที่สิ้นสุดอบรม</td>
+        <td  style="border-right:1px solid #000;" width="20%">รายละเอียดการอบรม</td>
     </tr>
 
 </thead>
-    <tbody>';
+    <tbody>
+</div>
+    ';
 
-$end = "</tbody>
-</table>";
+    $end = "</tbody>
+    </table>";
 
-$mpdf->WriteHTML($head);
+    $pdf = new mPDF('th', 'A4', '0', 'THSarabunNew');
+    $pdf->AddPage();
 
-$mpdf->WriteHTML($content);
+    $pdf->WriteHTML($head);
+    $pdf->WriteHTML($content);
+    $pdf->SetFooter($footer);
 
-$mpdf->WriteHTML($end);
+    $pdf->WriteHTML($end);
 
-$mpdf->Output();
-?>
+    $pdf->Output();
+    ?>
