@@ -11,7 +11,7 @@
   <div class="form-group row">
     <label for="colFormLabelmd" class="col-md-3">ประภาทการลา</label>
     <div class="form-group col-md-5">
-      <select class="form-control" id="leave_type_id" name="leave_type_id">
+      <select class="form-control" id="leave_type" name="leave_type">
      <option></option>
       <option>ป่วย</option>
       <option>กิจ</option>

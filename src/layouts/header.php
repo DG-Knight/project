@@ -12,7 +12,7 @@
 
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="alert alert-primary">สวัสดี, <?php echo $_SESSION['AUTHEN']['FNAME']."&nbsp".$_SESSION['AUTHEN']['LNAME']?> !</span>
+              <span class="alert alert-primary">สวัสดี <?php echo $_SESSION['AUTHEN']['FNAME']."&nbsp".$_SESSION['AUTHEN']['LNAME']?> !</span>
               <img class="img-xs rounded-circle" src="../../assets/images/faces/face1.jpg" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
