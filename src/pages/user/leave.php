@@ -40,7 +40,7 @@
                           <td><?=$i++ ?></td>
                           <td><?=$data->user_fname;?>&nbsp
                           <?=$data->user_lname;?></td>
-                          <td><?=$data->leave_type_id;?></td>
+                          <td><?=$data->leave_type;?></td>
                           <td><?=$data->leave_start;?></td>
                           <td><?=$data->leave_end;?></td>
 

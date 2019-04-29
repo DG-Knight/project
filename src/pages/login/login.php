@@ -1,8 +1,8 @@
 <?php
 require '../../libs/function.php';
 if(isset($_POST['login'])){  // check ปุ่ม login
-  $password = $_POST['password'];
 
+  $password = md5($_POST['password']);
 
   $username = $_POST['username'];
   $result = Authentication($username,$password);

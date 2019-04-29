@@ -4,7 +4,7 @@
       <div class="page-header">
         <h3 class="text-center text-primary">ข้อมูลส่วนตัว</h3>
       </div>
-<a href="dashboard.php?file=admin/nurse/n_personals_form" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูลส่วนตัว </a>
+<!-- <a href="dashboard.php?file=admin/nurse/n_personals_form" class="btn btn-success"><i class="fa fa-plus"></i> เพิ่มข้อมูลส่วนตัว </a> -->
   <div class="table-responsive">
                   <table class="table table-striped">
                     <thead>
@@ -42,8 +42,8 @@
                           <a href="dashboard.php?file=admin/nurse/n_personals_form_edit&id=<?=$data->user_id?>"class="btn btn-warning">
                           <i class="fa fa-edit"></i></a>
 
-                          <a href="dashboard.php?file=admin/nurse/n_personals_del&id=<?=$data->user_id?>"onclick="return confirm('ยืนยันการลบ')"class="btn btn-danger">
-                          <i class="fa fa-trash-o"></i></a>
+                          <!-- <a href="dashboard.php?file=admin/nurse/n_personals_del&id=<?=$data->user_id?>"onclick="return confirm('ยืนยันการลบ')"class="btn btn-danger">
+                          <i class="fa fa-trash-o"></i></a> -->
                         </td>
                       </tr>
                       <?php }}//EndRowCount&&WhileLoop ?>

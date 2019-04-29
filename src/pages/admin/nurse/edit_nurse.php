@@ -1,6 +1,6 @@
 <?php
 $user_name = $_POST['user_name'];
-$user_pass = $_POST['user_pass'];
+$user_pass = md5($_POST['user_pass']);
 $user_fname = $_POST['user_fname'];
 $user_lname = $_POST['user_lname'];
 $user_position = $_POST['user_position'];
@@ -27,7 +27,7 @@ $user_level = $_POST['user_level'];
   $result ->execute([
     "user_id"=>$_POST['user_id'],
     "user_name"=>$user_name,
-    "user_pass"=>$user_pass,
+    "user_pass"=>md5($user_pass),
     "user_fname"=>$user_fname,
     "user_lname"=>$user_lname,
     "user_position"=>$user_position,

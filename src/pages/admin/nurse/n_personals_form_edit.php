@@ -53,7 +53,7 @@ $row=$query -> fetch(PDO::FETCH_OBJ);
            if ($query->rowCount()>0) {
              while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
         ?>
-        <option><?=$data->user_position;?><option>
+        <option><?=$data->user_position;?></option>
         <?php }} ?>
       </select>
     </div>
@@ -71,7 +71,7 @@ $row=$query -> fetch(PDO::FETCH_OBJ);
            if ($query->rowCount()>0) {
              while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
         ?>
-        <option><?=$data->user_level;?><option>
+        <option><?=$data->user_level;?></option>
         <?php }} ?>
       </select>
     </div>

@@ -30,7 +30,7 @@ function PDOConnector(){
 function Authentication($username,$password){
 
 	  $conn = PDOConnector();
-	  $query = $conn->prepare('SELECT * FROM users WHERE user_name = "'.$username.'" AND user_pass = "'.$password.'"');
+	  $query = $conn->prepare('SELECT * FROM users WHERE user_name = "'.$username.'" AND user_pass = "'.md5($password).'"');
 	  $query ->execute();
 
 	  if($query->rowCount()>0){

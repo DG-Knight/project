@@ -373,11 +373,16 @@ for(i=1;i<=14;i++){
             if ($rs->scd_name == 'S2')
               echo "<option value='S2' selected>S2";
             else
-            echo "<option value='S2'>S2";
-          if ($rs->scd_name == 'S1')
-            echo "<option value='S1' selected>S1";
-          else
+              echo "<option value='S2'>S2";
+            if ($rs->scd_name == 'S1')
+              echo "<option value='S1' selected>S1";
+            else
               echo "<option value='S1'>S1";
+            if ($rs->scd_name == 'อ')
+              echo "<option value='อ' selected>อ";
+            else
+              echo "<option value='อ'>อ";
+
             echo "</select>";
             echo "</td>";
           }
@@ -394,6 +399,7 @@ for(i=1;i<=14;i++){
             echo "<option value='V'>V";
             echo "<option value='S1'>S1";
             echo "<option value='S2'>S2";
+            echo "<option value='อ'>อ";
             echo "</select>";
             echo "</td>";
 

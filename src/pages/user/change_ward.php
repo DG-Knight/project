@@ -21,8 +21,9 @@
                       <tbody>
 
                         <?php
+
                         $conn = PDOConnector();
-                        $sql = 'SELECT * FROM change_ward';
+                        $sql = 'SELECT * FROM change_ward ';
                         $query = $conn->prepare($sql);
                         $query->execute();
                            if ($query->rowCount()>0) {
@@ -31,10 +32,14 @@
                         ?>
                         <tr>
                           <td><?=$i++ ?></td>
+
                           <td><?=$data->person_chang;?></td>
                           <td><?=$data->nurse_chang;?></td>
                           <td><?=$data->date_ward;?></td>
                           <td><?=$data->opt_names;?></td>
+
+
+
                           <td>
 
 

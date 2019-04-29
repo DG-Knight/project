@@ -32,7 +32,7 @@
   </div>
   <div class="form-group">
     <label for="user_add">ที่อยู่</label>
-    <input type="text" class="form-control" name="user_add" id="user_add" placeholder="*************">
+    <input type="text" class="form-control" name="user_add" id="user_add" placeholder="">
   </div>
   <div class="form-row">
     <div class="form-group col-md-4">

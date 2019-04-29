@@ -1,7 +1,7 @@
 <?php
 
 $user_name = $_POST['user_name'];
-$user_pass = $_POST['user_pass'];
+$user_pass = md5($_POST['user_pass']);
 $user_fname = $_POST['user_fname'];
 $user_lname = $_POST['user_lname'];
 $user_position = $_POST['user_position'];
@@ -10,11 +10,22 @@ $user_email = $_POST['user_email'];
 $user_add = $_POST['user_add'];
 $user_level = $_POST['user_level'];
 
+$conn = PDOConnector();
+$chack = "SELECT * FROM users where user_name ='$user_name'";
+$result= $conn->prepare($chack);
+$result->execute();
+if ($result->rowCount()>0) {
+  echo "<script>
+      alert('Username มีผู้ใช้แล้ว');
+      window.location = 'dashboard.php?file=admin/nurse/insert_nurse';
+    </script>";
+}else {
+
   $conn = PDOConnector();
   $result = $conn->prepare('INSERT INTO users(user_name, user_pass, user_fname, user_lname, user_position, user_tel, user_email, user_add, user_level) VALUES(:user_name, :user_pass, :user_fname, :user_lname, :user_position, :user_tel, :user_email, :user_add, :user_level)');
   $result ->execute([
     "user_name"=>$user_name,
-    "user_pass"=>$user_pass,
+    "user_pass"=>md5($user_pass),
     "user_fname"=>$user_fname,
     "user_lname"=>$user_lname,
     "user_position"=>$user_position,
@@ -30,6 +41,7 @@ if ($result) {
     </script>";
 }else {
 echo "เพิ่มข้อมูลไม่สำเร็จ";
+}
 }
 $conn = "";
 ?>

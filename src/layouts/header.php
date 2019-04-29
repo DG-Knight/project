@@ -29,7 +29,7 @@
                   </div>
                 </div>
               </a>
-              <!-- <a class="dropdown-item">
+              <!-- <a class="dropdown-item" href="change_pw_form.php">
                 Change Password
               </a> -->
               <a href="logout.php" class="dropdown-item">

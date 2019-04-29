@@ -10,13 +10,41 @@
           <div class="form-row">
             <div class="form-group col-md-5">
               <label for="person_chang">พยาบาลที่ขอเปลี่ยนเวร</label>
-              <input type="text" id="person_chang" name="person_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
+              <select type="text" id="person_chang" name="person_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
+                <option></option>
+                <?php
+                $id = $_SESSION['AUTHEN']['UID'];
+                $conn = PDOConnector();
+                $sql = "SELECT * FROM users where user_id=$id";
+                $query = $conn->prepare($sql);
+                $query->execute();
+                   if ($query->rowCount()>0) {
+
+                     while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
+                ?>
+                <option value="<?=$data->user_id; ?>"><?=$data->user_fname;?>&nbsp<?=$data->user_lname;?></option>
+                <?php }} ?>
+                </select>
             </div>
 
             <div class="form-group col-md-5">
               <label for="nurse_chang">พยาบาลที่เปลี่ยนเวร</label>
-              <input type="text"id="nurse_chang" name="nurse_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
 
+
+              <select type="text"id="nurse_chang" name="nurse_chang" class="form-control" placeholder="ชื่อ-นามสกุล">
+              <option></option>
+              <?php
+
+              $conn = PDOConnector();
+              $sql = 'SELECT * FROM users where user_level != 0';
+              $query = $conn->prepare($sql);
+              $query->execute();
+                 if ($query->rowCount()>0) {
+                   while ($data = $query -> fetch(PDO::FETCH_OBJ)) {
+              ?>
+              <option value="<?=$data->user_id; ?>"><?=$data->user_fname;?>&nbsp<?=$data->user_lname;?></option>
+              <?php }} ?>
+              </select>
             </div>
 
             <div class="form-group col-md-5">
